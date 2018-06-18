@@ -17,9 +17,10 @@ such as on Google App Engine or Google Compute Engine.
 
 ## Before you begin
 
- 1. Followed the steps in the
+ 1. Follow the steps in the
 [Before you begin section][before] of the client
- library's README.
+ library's README.  
+ 
  2. Install dependencies:
 
     With **npm**:
