@@ -1,5 +1,5 @@
 /**
- * Copyright 2017, Google, Inc.
+ * Copyright 2018, Google, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,10 +17,10 @@
 
 function createTask (project, location, queue) {
   // [START tasks_create_task]
-  // Imports the Google Cloud Tasks library
+  // Imports the Google Cloud Tasks library.
   const cloudTasks = require('@google-cloud/tasks');
 
-  // Instantiates a client
+  // Instantiates a client.
   const client = new cloudTasks.CloudTasksClient();
 
   // Construct the fully qualified queue name.
@@ -29,31 +29,32 @@ function createTask (project, location, queue) {
   // Prepare the payload.
   const task = {
     pullMessage: {
-      payload: Buffer.from('a message for the recipient').toString('base64'),
-    },
+      payload: Buffer.from('a message for the recipient').toString('base64')
+    }
   };
 
   // Construct the request body.
   const request = {
     parent: parent,
-    task: task,
+    task: task
   };
 
+  // Send create task request.
   client.createTask(request).then(response => {
-      const task = response[0].name;
-      console.log(`Created task ${task}`);
-    }).catch(err => {
-      console.log(`Error in createTask: ${err.message || err}`);
-    });
-    // [END tasks_create_task]
+    const task = response[0].name;
+    console.log(`Created task ${task}`);
+  }).catch(err => {
+    console.log(`Error in createTask: ${err.message || err}`);
+  });
+  // [END tasks_create_task]
 }
 
 function pullTask (project, location, queue) {
   // [START tasks_pull_and_acknowledge_task]
-  // Imports the Google Cloud Tasks library
+  // Imports the Google Cloud Tasks library.
   const cloudTasks = require('@google-cloud/tasks');
 
-  // Instantiates a client
+  // Instantiates a client.
   const client = new cloudTasks.CloudTasksClient();
 
   // Construct the fully qualified queue name.
@@ -63,47 +64,44 @@ function pullTask (project, location, queue) {
   const request = {
     parent: parent,
     leaseDuration: {
-      seconds: 600,
+      seconds: 600
     },
     maxTasks: 1,
-    responseView: 'FULL',
+    responseView: 'FULL'
   };
 
-  client
-    .leaseTask(request)
-    .then(response => {
-      const task = response;
-      console.log(`Leased task ${task}`);
-      return task;
-    })
-    .catch(err => {
-      console.log(`Error in leaseTask: ${err.message || err}`);
-    });
+  // Send lease task request.
+  client.leaseTasks(request).then(response => {
+    // Extract necessary properties to acknowledge task.
+    const {name, scheduleTime} = response[0].tasks[0];
+    console.log(`Leased task ${JSON.stringify({name, scheduleTime})}`);
+  }).catch(err => {
+    console.log(`Error in leaseTask: ${err.message || err}`);
+  });
 }
 
 function acknowledgeTask (task) {
-  // Imports the Google Cloud Tasks library
+  // Imports the Google Cloud Tasks library.
   const cloudTasks = require('@google-cloud/tasks');
 
-  // Instantiates a client
+  // Instantiates a client.
   const client = new cloudTasks.CloudTasksClient();
 
-  // Construct the fully qualified task name.
-  // const task_parent = client.taskPath(project, location, queue, task);
-
+  // Construct the request body.
   const request = {
     name: task.name,
     scheduleTime: task.scheduleTime,
+    leaseDuration: {
+      seconds: 600
+    }
   };
 
-  client
-    .acknowledgeTask(request)
-    .then(response => {
-      console.log(`Acknowledged task ${task.name}.`);
-    })
-    .catch(err => {
-      console.log(`Error in acknowledgeTask: ${err.message || err}`);
-    });
+  // Send acknowledge task request.
+  client.acknowledgeTask(request).then(() => {
+    console.log(`Acknowledged task ${task.name}`);
+  }).catch(err => {
+    console.log(`Error in acknowledgeTask: ${err.message || err}`);
+  });
 // [END tasks_pull_and_acknowledge_task]
 }
 
