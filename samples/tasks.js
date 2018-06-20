@@ -16,7 +16,7 @@
 'use strict';
 
 function createTask (project, location, queue) {
-  // [START tasks_create_task]
+  // [START cloud_tasks_create_task]
   // Imports the Google Cloud Tasks library.
   const cloudTasks = require('@google-cloud/tasks');
 
@@ -46,11 +46,11 @@ function createTask (project, location, queue) {
   }).catch(err => {
     console.log(`Error in createTask: ${err.message || err}`);
   });
-  // [END tasks_create_task]
+  // [END cloud_tasks_create_task]
 }
 
 function pullTask (project, location, queue) {
-  // [START tasks_pull_and_acknowledge_task]
+  // [START cloud_tasks_pull_and_acknowledge_task]
   // Imports the Google Cloud Tasks library.
   const cloudTasks = require('@google-cloud/tasks');
 
@@ -102,7 +102,7 @@ function acknowledgeTask (task) {
   }).catch(err => {
     console.log(`Error in acknowledgeTask: ${err.message || err}`);
   });
-// [END tasks_pull_and_acknowledge_task]
+// [END cloud_tasks_pull_and_acknowledge_task]
 }
 
 require(`yargs`) // eslint-disable-line
