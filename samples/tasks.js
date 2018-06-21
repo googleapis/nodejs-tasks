@@ -44,7 +44,7 @@ function createTask (project, location, queue) {
     const task = response[0].name;
     console.log(`Created task ${task}`);
   }).catch(err => {
-    console.log(`Error in createTask: ${err.message || err}`);
+    console.error(`Error in createTask: ${err.message || err}`);
   });
   // [END cloud_tasks_create_task]
 }
@@ -76,7 +76,7 @@ function pullTask (project, location, queue) {
     const {name, scheduleTime} = response[0].tasks[0];
     console.log(`Leased task ${JSON.stringify({name, scheduleTime})}`);
   }).catch(err => {
-    console.log(`Error in leaseTask: ${err.message || err}`);
+    console.error(`Error in leaseTask: ${err.message || err}`);
   });
 }
 
@@ -100,7 +100,7 @@ function acknowledgeTask (task) {
   client.acknowledgeTask(request).then(() => {
     console.log(`Acknowledged task ${task.name}`);
   }).catch(err => {
-    console.log(`Error in acknowledgeTask: ${err.message || err}`);
+    console.error(`Error in acknowledgeTask: ${err.message || err}`);
   });
 // [END cloud_tasks_pull_and_acknowledge_task]
 }
