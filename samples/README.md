@@ -20,7 +20,7 @@ such as on Google App Engine or Google Compute Engine.
  1. Follow the steps in the
 [Before you begin section][before] of the client
  library's README.  
- 
+
  2. Install dependencies:
 
     With **npm**:
@@ -37,7 +37,7 @@ such as on Google App Engine or Google Compute Engine.
 
 To create a queue using the Cloud SDK, use the following gcloud command:
 
-    gcloud alpha tasks queues create-pull-queue my-pull-queue
+    gcloud alpha tasks queues create pull my-pull-queue
 
 ## Running the Samples
 
