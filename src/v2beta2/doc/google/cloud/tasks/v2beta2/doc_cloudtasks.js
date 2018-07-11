@@ -261,12 +261,6 @@ var ResumeQueueRequest = {
  *
  *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
  *
- * @property {string} orderBy
- *   Sort order used for the query. The only fields supported for sorting
- *   are `schedule_time` and `pull_message.tag`. All results will be
- *   returned in approximately ascending order. The default ordering is by
- *   `schedule_time`.
- *
  * @property {number} pageSize
  *   Requested page size. Fewer tasks than requested might be returned.
  *
