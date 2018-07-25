@@ -101,7 +101,9 @@ class CloudTasksClient {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this._pathTemplates = {
-      projectPathTemplate: new gax.PathTemplate('projects/{project}'),
+      projectPathTemplate: new gax.PathTemplate(
+        'projects/{project}'
+      ),
       locationPathTemplate: new gax.PathTemplate(
         'projects/{project}/locations/{location}'
       ),
@@ -122,7 +124,11 @@ class CloudTasksClient {
         'nextPageToken',
         'queues'
       ),
-      listTasks: new gax.PageDescriptor('pageToken', 'nextPageToken', 'tasks'),
+      listTasks: new gax.PageDescriptor(
+        'pageToken',
+        'nextPageToken',
+        'tasks'
+      ),
     };
 
     // Put together the default options sent with requests.
@@ -203,7 +209,9 @@ class CloudTasksClient {
    * in this service.
    */
   static get scopes() {
-    return ['https://www.googleapis.com/auth/cloud-platform'];
+    return [
+      'https://www.googleapis.com/auth/cloud-platform',
+    ];
   }
 
   /**
@@ -327,11 +335,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.listQueues(request, options, callback);
   }
@@ -403,7 +410,7 @@ class CloudTasksClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Gets a queue.
@@ -452,11 +459,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.getQueue(request, options, callback);
   }
@@ -471,7 +477,7 @@ class CloudTasksClient {
    * WARNING: Using this method may have unintended side effects if you are
    * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
    * Read
-   * [Overview of Queue Management and queue.yaml](https://cloud.google.com/cloud-tasks/docs/queue-yaml)
+   * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
    * before using this method.
    *
    * @param {Object} request
@@ -535,11 +541,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.createQueue(request, options, callback);
   }
@@ -557,7 +562,7 @@ class CloudTasksClient {
    * WARNING: Using this method may have unintended side effects if you are
    * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
    * Read
-   * [Overview of Queue Management and queue.yaml](https://cloud.google.com/cloud-tasks/docs/queue-yaml)
+   * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
    * before using this method.
    *
    * @param {Object} request
@@ -617,11 +622,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'queue.name': request.queue.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'queue.name': request.queue.name
+      });
 
     return this._innerApiCalls.updateQueue(request, options, callback);
   }
@@ -637,7 +641,7 @@ class CloudTasksClient {
    * WARNING: Using this method may have unintended side effects if you are
    * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
    * Read
-   * [Overview of Queue Management and queue.yaml](https://cloud.google.com/cloud-tasks/docs/queue-yaml)
+   * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
    * before using this method.
    *
    * @param {Object} request
@@ -676,11 +680,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.deleteQueue(request, options, callback);
   }
@@ -737,11 +740,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.purgeQueue(request, options, callback);
   }
@@ -799,11 +801,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.pauseQueue(request, options, callback);
   }
@@ -820,7 +821,7 @@ class CloudTasksClient {
    * WARNING: Resuming many high-QPS queues at the same time can
    * lead to target overloading. If you are resuming high-QPS
    * queues, follow the 500/50/5 pattern described in
-   * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/cloud-tasks/pdfs/managing-cloud-tasks-scaling-risks-2017-06-05.pdf).
+   * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
    *
    * @param {Object} request
    *   The request object that will be sent.
@@ -866,11 +867,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.resumeQueue(request, options, callback);
   }
@@ -880,8 +880,9 @@ class CloudTasksClient {
    * Returns an empty policy if the resource exists and does not have a policy
    * set.
    *
-   * Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission on the
-   * specified resource parent:
+   * Authorization requires the following
+   * [Google IAM](https://cloud.google.com/iam) permission on the specified
+   * resource parent:
    *
    * * `cloudtasks.queues.getIamPolicy`
    *
@@ -928,11 +929,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.getIamPolicy(request, options, callback);
   }
@@ -944,8 +944,9 @@ class CloudTasksClient {
    * Note: The Cloud Console does not check queue-level IAM permissions yet.
    * Project-level permissions are required to use the Cloud Console.
    *
-   * Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission on the
-   * specified resource parent:
+   * Authorization requires the following
+   * [Google IAM](https://cloud.google.com/iam) permission on the specified
+   * resource parent:
    *
    * * `cloudtasks.queues.setIamPolicy`
    *
@@ -1004,11 +1005,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.setIamPolicy(request, options, callback);
   }
@@ -1075,11 +1075,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.testIamPermissions(request, options, callback);
   }
@@ -1091,6 +1090,9 @@ class CloudTasksClient {
    * due to performance considerations;
    * response_view controls the
    * subset of information which is returned.
+   *
+   * The tasks may be returned in any order. The ordering may change at any
+   * time.
    *
    * @param {Object} request
    *   The request object that will be sent.
@@ -1110,15 +1112,10 @@ class CloudTasksClient {
    *   contains.
    *
    *   Authorization for FULL requires
-   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the
-   *   Task resource.
+   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   *   permission on the Task resource.
    *
    *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
-   * @param {string} [request.orderBy]
-   *   Sort order used for the query. The only fields supported for sorting
-   *   are `schedule_time` and `pull_message.tag`. All results will be
-   *   returned in approximately ascending order. The default ordering is by
-   *   `schedule_time`.
    * @param {number} [request.pageSize]
    *   The maximum number of resources contained in the underlying API
    *   response. If page streaming is performed per-resource, this
@@ -1204,11 +1201,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.listTasks(request, options, callback);
   }
@@ -1244,15 +1240,10 @@ class CloudTasksClient {
    *   contains.
    *
    *   Authorization for FULL requires
-   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the
-   *   Task resource.
+   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   *   permission on the Task resource.
    *
    *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
-   * @param {string} [request.orderBy]
-   *   Sort order used for the query. The only fields supported for sorting
-   *   are `schedule_time` and `pull_message.tag`. All results will be
-   *   returned in approximately ascending order. The default ordering is by
-   *   `schedule_time`.
    * @param {number} [request.pageSize]
    *   The maximum number of resources contained in the underlying API
    *   response. If page streaming is performed per-resource, this
@@ -1289,7 +1280,7 @@ class CloudTasksClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Gets a task.
@@ -1312,8 +1303,8 @@ class CloudTasksClient {
    *   contains.
    *
    *   Authorization for FULL requires
-   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the
-   *   Task resource.
+   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   *   permission on the Task resource.
    *
    *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
    * @param {Object} [options]
@@ -1353,11 +1344,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.getTask(request, options, callback);
   }
@@ -1367,10 +1357,9 @@ class CloudTasksClient {
    *
    * Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * * For [App Engine queues](https://cloud.google.comgoogle.cloud.tasks.v2beta2.AppEngineHttpTarget),
-   *   the maximum task size is 100KB.
-   * * For [pull queues](https://cloud.google.comgoogle.cloud.tasks.v2beta2.PullTarget), this
-   *   the maximum task size is 1MB.
+   * * For App Engine queues, the maximum task size is
+   *   100KB.
+   * * For pull queues, the maximum task size is 1MB.
    *
    * @param {Object} request
    *   The request object that will be sent.
@@ -1430,8 +1419,8 @@ class CloudTasksClient {
    *   contains.
    *
    *   Authorization for FULL requires
-   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the
-   *   Task resource.
+   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   *   permission on the Task resource.
    *
    *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
    * @param {Object} [options]
@@ -1476,11 +1465,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.createTask(request, options, callback);
   }
@@ -1528,11 +1516,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.deleteTask(request, options, callback);
   }
@@ -1598,8 +1585,8 @@ class CloudTasksClient {
    *   contains.
    *
    *   Authorization for FULL requires
-   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the
-   *   Task resource.
+   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   *   permission on the Task resource.
    *
    *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
    * @param {string} [request.filter]
@@ -1674,11 +1661,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.leaseTasks(request, options, callback);
   }
@@ -1749,11 +1735,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.acknowledgeTask(request, options, callback);
   }
@@ -1803,8 +1788,8 @@ class CloudTasksClient {
    *   contains.
    *
    *   Authorization for FULL requires
-   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the
-   *   Task resource.
+   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   *   permission on the Task resource.
    *
    *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
    * @param {Object} [options]
@@ -1851,11 +1836,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.renewLease(request, options, callback);
   }
@@ -1896,8 +1880,8 @@ class CloudTasksClient {
    *   contains.
    *
    *   Authorization for FULL requires
-   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the
-   *   Task resource.
+   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   *   permission on the Task resource.
    *
    *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
    * @param {Object} [options]
@@ -1942,11 +1926,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.cancelLease(request, options, callback);
   }
@@ -1998,8 +1981,8 @@ class CloudTasksClient {
    *   contains.
    *
    *   Authorization for FULL requires
-   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the
-   *   Task resource.
+   *   `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   *   permission on the Task resource.
    *
    *   The number should be among the values of [View]{@link google.cloud.tasks.v2beta2.View}
    * @param {Object} [options]
@@ -2039,11 +2022,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.runTask(request, options, callback);
   }
@@ -2120,7 +2102,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromProjectName(projectName) {
-    return this._pathTemplates.projectPathTemplate.match(projectName).project;
+    return this._pathTemplates.projectPathTemplate
+      .match(projectName)
+      .project;
   }
 
   /**
@@ -2131,7 +2115,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromLocationName(locationName) {
-    return this._pathTemplates.locationPathTemplate.match(locationName).project;
+    return this._pathTemplates.locationPathTemplate
+      .match(locationName)
+      .project;
   }
 
   /**
@@ -2142,7 +2128,8 @@ class CloudTasksClient {
    * @returns {String} - A string representing the location.
    */
   matchLocationFromLocationName(locationName) {
-    return this._pathTemplates.locationPathTemplate.match(locationName)
+    return this._pathTemplates.locationPathTemplate
+      .match(locationName)
       .location;
   }
 
@@ -2154,7 +2141,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromQueueName(queueName) {
-    return this._pathTemplates.queuePathTemplate.match(queueName).project;
+    return this._pathTemplates.queuePathTemplate
+      .match(queueName)
+      .project;
   }
 
   /**
@@ -2165,7 +2154,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the location.
    */
   matchLocationFromQueueName(queueName) {
-    return this._pathTemplates.queuePathTemplate.match(queueName).location;
+    return this._pathTemplates.queuePathTemplate
+      .match(queueName)
+      .location;
   }
 
   /**
@@ -2176,7 +2167,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the queue.
    */
   matchQueueFromQueueName(queueName) {
-    return this._pathTemplates.queuePathTemplate.match(queueName).queue;
+    return this._pathTemplates.queuePathTemplate
+      .match(queueName)
+      .queue;
   }
 
   /**
@@ -2187,7 +2180,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromTaskName(taskName) {
-    return this._pathTemplates.taskPathTemplate.match(taskName).project;
+    return this._pathTemplates.taskPathTemplate
+      .match(taskName)
+      .project;
   }
 
   /**
@@ -2198,7 +2193,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the location.
    */
   matchLocationFromTaskName(taskName) {
-    return this._pathTemplates.taskPathTemplate.match(taskName).location;
+    return this._pathTemplates.taskPathTemplate
+      .match(taskName)
+      .location;
   }
 
   /**
@@ -2209,7 +2206,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the queue.
    */
   matchQueueFromTaskName(taskName) {
-    return this._pathTemplates.taskPathTemplate.match(taskName).queue;
+    return this._pathTemplates.taskPathTemplate
+      .match(taskName)
+      .queue;
   }
 
   /**
@@ -2220,8 +2219,11 @@ class CloudTasksClient {
    * @returns {String} - A string representing the task.
    */
   matchTaskFromTaskName(taskName) {
-    return this._pathTemplates.taskPathTemplate.match(taskName).task;
+    return this._pathTemplates.taskPathTemplate
+      .match(taskName)
+      .task;
   }
 }
+
 
 module.exports = CloudTasksClient;
