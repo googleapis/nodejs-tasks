@@ -20,7 +20,7 @@ import logging
 import subprocess
 
 logging.basicConfig(level=logging.DEBUG)
-gapic = gcp.GAPICGenerator()gcp.CommonTemplates()
+gapic = gcp.GAPICGenerator()common_templates = gcp.CommonTemplates()
 
 
 version = 'v2beta2'
