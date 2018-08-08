@@ -94,11 +94,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -129,11 +125,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -286,11 +278,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -311,11 +299,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -343,11 +327,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -378,11 +358,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -411,11 +387,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -446,11 +418,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -479,11 +447,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -514,11 +478,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         name: formattedName,
       };
@@ -547,11 +507,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         resource: formattedResource,
       };
@@ -584,11 +540,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         resource: formattedResource,
       };
@@ -617,11 +569,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var policy = {};
       var request = {
         resource: formattedResource,
@@ -656,11 +604,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var policy = {};
       var request = {
         resource: formattedResource,
@@ -691,11 +635,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var permissions = [];
       var request = {
         resource: formattedResource,
@@ -725,11 +665,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var permissions = [];
       var request = {
         resource: formattedResource,
@@ -760,11 +696,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedParent = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         parent: formattedParent,
       };
@@ -798,11 +730,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedParent = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var request = {
         parent: formattedParent,
       };
@@ -831,12 +759,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var request = {
         name: formattedName,
       };
@@ -867,12 +790,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var request = {
         name: formattedName,
       };
@@ -901,11 +819,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedParent = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var task = {};
       var request = {
         parent: formattedParent,
@@ -938,11 +852,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedParent = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var task = {};
       var request = {
         parent: formattedParent,
@@ -973,12 +883,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var request = {
         name: formattedName,
       };
@@ -999,12 +904,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var request = {
         name: formattedName,
       };
@@ -1032,11 +932,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedParent = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var leaseDuration = {};
       var request = {
         parent: formattedParent,
@@ -1066,11 +962,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedParent = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      var formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
       var leaseDuration = {};
       var request = {
         parent: formattedParent,
@@ -1101,12 +993,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var scheduleTime = {};
       var request = {
         name: formattedName,
@@ -1129,12 +1016,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var scheduleTime = {};
       var request = {
         name: formattedName,
@@ -1164,12 +1046,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var scheduleTime = {};
       var leaseDuration = {};
       var request = {
@@ -1204,12 +1081,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var scheduleTime = {};
       var leaseDuration = {};
       var request = {
@@ -1242,12 +1114,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var scheduleTime = {};
       var request = {
         name: formattedName,
@@ -1280,12 +1147,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var scheduleTime = {};
       var request = {
         name: formattedName,
@@ -1316,12 +1178,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var request = {
         name: formattedName,
       };
@@ -1352,12 +1209,7 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      var formattedName = client.taskPath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]',
-        '[TASK]'
-      );
+      var formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
       var request = {
         name: formattedName,
       };
@@ -1377,6 +1229,7 @@ describe('CloudTasksClient', () => {
       });
     });
   });
+
 });
 
 function mockSimpleGrpcMethod(expectedRequest, response, error) {
