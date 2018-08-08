@@ -101,7 +101,9 @@ class CloudTasksClient {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this._pathTemplates = {
-      projectPathTemplate: new gax.PathTemplate('projects/{project}'),
+      projectPathTemplate: new gax.PathTemplate(
+        'projects/{project}'
+      ),
       locationPathTemplate: new gax.PathTemplate(
         'projects/{project}/locations/{location}'
       ),
@@ -122,7 +124,11 @@ class CloudTasksClient {
         'nextPageToken',
         'queues'
       ),
-      listTasks: new gax.PageDescriptor('pageToken', 'nextPageToken', 'tasks'),
+      listTasks: new gax.PageDescriptor(
+        'pageToken',
+        'nextPageToken',
+        'tasks'
+      ),
     };
 
     // Put together the default options sent with requests.
@@ -203,7 +209,9 @@ class CloudTasksClient {
    * in this service.
    */
   static get scopes() {
-    return ['https://www.googleapis.com/auth/cloud-platform'];
+    return [
+      'https://www.googleapis.com/auth/cloud-platform',
+    ];
   }
 
   /**
@@ -327,11 +335,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.listQueues(request, options, callback);
   }
@@ -403,7 +410,7 @@ class CloudTasksClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Gets a queue.
@@ -452,11 +459,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.getQueue(request, options, callback);
   }
@@ -535,11 +541,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.createQueue(request, options, callback);
   }
@@ -617,11 +622,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'queue.name': request.queue.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'queue.name': request.queue.name
+      });
 
     return this._innerApiCalls.updateQueue(request, options, callback);
   }
@@ -676,11 +680,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.deleteQueue(request, options, callback);
   }
@@ -737,11 +740,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.purgeQueue(request, options, callback);
   }
@@ -799,11 +801,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.pauseQueue(request, options, callback);
   }
@@ -866,11 +867,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.resumeQueue(request, options, callback);
   }
@@ -929,11 +929,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.getIamPolicy(request, options, callback);
   }
@@ -1006,11 +1005,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.setIamPolicy(request, options, callback);
   }
@@ -1077,11 +1075,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.testIamPermissions(request, options, callback);
   }
@@ -1204,11 +1201,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.listTasks(request, options, callback);
   }
@@ -1284,7 +1280,7 @@ class CloudTasksClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Gets a task.
@@ -1348,11 +1344,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.getTask(request, options, callback);
   }
@@ -1470,11 +1465,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.createTask(request, options, callback);
   }
@@ -1522,11 +1516,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.deleteTask(request, options, callback);
   }
@@ -1668,11 +1661,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.leaseTasks(request, options, callback);
   }
@@ -1743,11 +1735,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.acknowledgeTask(request, options, callback);
   }
@@ -1845,11 +1836,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.renewLease(request, options, callback);
   }
@@ -1936,11 +1926,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.cancelLease(request, options, callback);
   }
@@ -2033,11 +2022,10 @@ class CloudTasksClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.runTask(request, options, callback);
   }
@@ -2114,7 +2102,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromProjectName(projectName) {
-    return this._pathTemplates.projectPathTemplate.match(projectName).project;
+    return this._pathTemplates.projectPathTemplate
+      .match(projectName)
+      .project;
   }
 
   /**
@@ -2125,7 +2115,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromLocationName(locationName) {
-    return this._pathTemplates.locationPathTemplate.match(locationName).project;
+    return this._pathTemplates.locationPathTemplate
+      .match(locationName)
+      .project;
   }
 
   /**
@@ -2136,7 +2128,8 @@ class CloudTasksClient {
    * @returns {String} - A string representing the location.
    */
   matchLocationFromLocationName(locationName) {
-    return this._pathTemplates.locationPathTemplate.match(locationName)
+    return this._pathTemplates.locationPathTemplate
+      .match(locationName)
       .location;
   }
 
@@ -2148,7 +2141,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromQueueName(queueName) {
-    return this._pathTemplates.queuePathTemplate.match(queueName).project;
+    return this._pathTemplates.queuePathTemplate
+      .match(queueName)
+      .project;
   }
 
   /**
@@ -2159,7 +2154,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the location.
    */
   matchLocationFromQueueName(queueName) {
-    return this._pathTemplates.queuePathTemplate.match(queueName).location;
+    return this._pathTemplates.queuePathTemplate
+      .match(queueName)
+      .location;
   }
 
   /**
@@ -2170,7 +2167,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the queue.
    */
   matchQueueFromQueueName(queueName) {
-    return this._pathTemplates.queuePathTemplate.match(queueName).queue;
+    return this._pathTemplates.queuePathTemplate
+      .match(queueName)
+      .queue;
   }
 
   /**
@@ -2181,7 +2180,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromTaskName(taskName) {
-    return this._pathTemplates.taskPathTemplate.match(taskName).project;
+    return this._pathTemplates.taskPathTemplate
+      .match(taskName)
+      .project;
   }
 
   /**
@@ -2192,7 +2193,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the location.
    */
   matchLocationFromTaskName(taskName) {
-    return this._pathTemplates.taskPathTemplate.match(taskName).location;
+    return this._pathTemplates.taskPathTemplate
+      .match(taskName)
+      .location;
   }
 
   /**
@@ -2203,7 +2206,9 @@ class CloudTasksClient {
    * @returns {String} - A string representing the queue.
    */
   matchQueueFromTaskName(taskName) {
-    return this._pathTemplates.taskPathTemplate.match(taskName).queue;
+    return this._pathTemplates.taskPathTemplate
+      .match(taskName)
+      .queue;
   }
 
   /**
@@ -2214,8 +2219,11 @@ class CloudTasksClient {
    * @returns {String} - A string representing the task.
    */
   matchTaskFromTaskName(taskName) {
-    return this._pathTemplates.taskPathTemplate.match(taskName).task;
+    return this._pathTemplates.taskPathTemplate
+      .match(taskName)
+      .task;
   }
 }
+
 
 module.exports = CloudTasksClient;
