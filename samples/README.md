@@ -84,7 +84,7 @@ HTTP POST request and logs it. The log output can be viewed with:
 
     gcloud app logs read
 
-## Running the Samples
+## Run the Sample Using the Command Line
 
 Set environment variables:
 
@@ -111,7 +111,7 @@ location is "us-central1").
 export LOCATION_ID=us-central1
 ```
 
-Create a task, targeted at the `log_payload` endpoint, with a payload specified:
+Running the sample will create a task, targeted at the `log_payload` endpoint, with a payload specified:
 
 ```
 node createTask.js --project=$PROJECT_ID --queue=$QUEUE_ID --location=$LOCATION_ID --payload=hello
