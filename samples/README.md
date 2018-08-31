@@ -1,77 +1,155 @@
-# Google Cloud Tasks Pull Queue Samples
+# Node.js Google Cloud Tasks sample for Google App Engine
 
-[![Open in Cloud Shell][shell_img]][shell_link]
+This sample application shows how to use [Google Cloud Tasks](https://cloud.google.com/cloud-tasks/)
+on Google App Engine Node.js [standard environment][appengine-std] and [flexible environment][appengine-flex].
 
-[shell_img]: http://gstatic.com/cloudssh/images/open-btn.png
-[shell_link]: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-tasks&page=editor&open_in_editor=samples/README.md
+App Engine queues push tasks to an App Engine HTTP target. This directory
+contains both the App Engine app to deploy, as well as the snippets to run
+locally to push tasks to it, which could also be called on App Engine.
 
-Sample command-line program for interacting with the Google Cloud Tasks API
-using pull queues.
+`createTask.js` is a simple command-line program to create tasks to be pushed to
+the App Engine app.
 
-Pull queues let you add tasks to a queue, then programatically remove and
-interact with them. Tasks can be added or processed in any environment,
-such as on Google App Engine or Google Compute Engine.
+`server.js` is the main App Engine app. This app serves as an endpoint to
+receive App Engine task attempts.
 
-`tasks.js` is a simple command-line program to demonstrate listing queues,
- creating tasks, and pulling and acknowledging tasks.
+`app.standard.yaml` configures the app for App Engine Node.js standard
+environment.
 
-## Before you begin
+`app.flexible.yaml` configures the app for App Engine Node.js flexible
+environment.
 
- 1. Follow the steps in the
-[Before you begin section][before] of the client
- library's README.  
+* [Setup](#setup)
+* [Running locally](#running-locally)
+* [Deploying to App Engine](#deploying-to-app-engine)
+* [Running the tests](#running-the-tests)
 
- 2. Install dependencies:
+## Setup
 
-    With **npm**:
+Before you can run or deploy the sample, you need to do the following:
+
+1.  Refer to the [appengine/README.md][readme] file for instructions on
+    running and deploying.
+1.  Enable the Cloud Tasks API in the [Google Cloud Console](https://console.cloud.google.com/apis/api/tasks.googleapis.com).
+1.  Install dependencies:
+
+    With `npm`:
 
         npm install
 
-    With **yarn**:
+    or with `yarn`:
 
         yarn install
-
-[before]:../README.md#before-you-begin
 
 ## Creating a queue
 
 To create a queue using the Cloud SDK, use the following gcloud command:
 
-    gcloud beta tasks queues create-pull-queue my-pull-queue
+    gcloud beta tasks queues create-app-engine-queue my-appengine-queue
+
+Note: A newly created queue will route to the default App Engine service and
+version unless configured to do otherwise. Read the online help for the
+`create-app-engine-queue` or the `update-app-engine-queue` commands to learn
+about routing overrides for App Engine queues.
+
+## Deploying the app to App Engine standard environment
+
+Deploy the App Engine app with gcloud:
+
+    gcloud app deploy app.standard.yaml
+
+Verify the index page is serving:
+
+    gcloud app browse
+
+The App Engine app serves as a target for the push requests. It has an
+endpoint `/log_payload` that reads the payload (i.e., the request body) of the
+HTTP POST request and logs it. The log output can be viewed with:
+
+    gcloud app logs read
+
+## Deploying the app to App Engine flexible environment
+
+Deploy the App Engine app with gcloud:
+
+    gcloud app deploy app.flexible.yaml
+
+Verify the index page is serving:
+
+    gcloud app browse
+
+The App Engine app serves as a target for the push requests. It has an
+endpoint `/log_payload` that reads the payload (i.e., the request body) of the
+HTTP POST request and logs it. The log output can be viewed with:
+
+    gcloud app logs read
 
 ## Running the Samples
 
-Set the environment variables:
+Set environment variables:
 
 First, your project ID:
 
-    export PROJECT_ID=my-project-id
+```
+export PROJECT_ID=my-project-id
+```
 
 Then the queue ID, as specified at queue creation time. Queue IDs already
 created can be listed with `gcloud beta tasks queues list`.
 
-    export QUEUE_ID=my-pull-queue
+```
+export QUEUE_ID=my-appengine-queue
+```
 
 And finally the location ID, which can be discovered with
 `gcloud beta tasks queues describe $QUEUE_ID`, with the location embedded in
 the "name" value (for instance, if the name is
-"projects/my-project/locations/us-central1/queues/my-pull-queue", then the
+"projects/my-project/locations/us-central1/queues/my-appengine-queue", then the
 location is "us-central1").
 
-    export LOCATION_ID=us-central1
+```
+export LOCATION_ID=us-central1
+```
 
-Create a task for a queue:
+Create a task, targeted at the `log_payload` endpoint, with a payload specified:
 
-    node tasks.js create $PROJECT_ID $LOCATION_ID $QUEUE_ID
+```
+node createTask.js --project=$PROJECT_ID --queue=$QUEUE_ID --location=$LOCATION_ID --payload=hello
+```
 
-Pull a task:
+Now view that the payload was received and verify the payload:
 
-    node tasks.js pull $PROJECT_ID $LOCATION_ID $QUEUE_ID
+```
+gcloud app logs read
+```
 
-Acknowledge task:
+Create a task that will be scheduled for a time in the future using the
+`--in_seconds` flag:
 
-    node tasks.js acknowledge <task>
+```
+node createTask.js --project=$PROJECT_ID --queue=$QUEUE_ID --location=$LOCATION_ID --payload=hello --in_seconds=30
+```
 
-* where task is the output from pull task, example:  
-`'{"name":"projects/my-project-id/locations/us-central1/queues/my-queue/tasks/1234","scheduleTime":"2017-11-01T22:27:
-  53.628279Z"}'`
+
+To get usage information: `node createTask.js --help`
+
+Which prints:
+
+```
+Options:
+  --version        Show version number                                                                         [boolean]
+  --location, -l   Location of the queue to add the task to.                                         [string] [required]
+  --queue, -q      ID (short name) of the queue to add the task to.                                  [string] [required]
+  --project, -p    Project of the queue to add the task to.                                          [string] [required]
+  --payload, -d    (Optional) Payload to attach to the push queue.                                              [string]
+  --inSeconds, -s  (Optional) The number of seconds from now to schedule task attempt.                          [number]
+  --help           Show help                                                                                   [boolean]
+
+Examples:
+  node createTask.js --project my-project-id
+
+For more information, see https://cloud.google.com/cloud-tasks
+```
+
+[appengine-flex]: https://cloud.google.com/appengine/docs/flexible/nodejs
+[appengine-std]: https://cloud.google.com/appengine/docs/standard/nodejs
