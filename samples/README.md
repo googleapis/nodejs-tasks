@@ -62,12 +62,6 @@ Verify the index page is serving:
 
     gcloud app browse
 
-The App Engine app serves as a target for the push requests. It has an
-endpoint `/log_payload` that reads the payload (i.e., the request body) of the
-HTTP POST request and logs it. The log output can be viewed with:
-
-    gcloud app logs read
-
 ## Deploying the app to App Engine flexible environment
 
 Deploy the App Engine app with gcloud:
@@ -77,12 +71,6 @@ Deploy the App Engine app with gcloud:
 Verify the index page is serving:
 
     gcloud app browse
-
-The App Engine app serves as a target for the push requests. It has an
-endpoint `/log_payload` that reads the payload (i.e., the request body) of the
-HTTP POST request and logs it. The log output can be viewed with:
-
-    gcloud app logs read
 
 ## Run the Sample Using the Command Line
 
@@ -111,17 +99,17 @@ location is "us-central1").
 export LOCATION_ID=us-central1
 ```
 
-Running the sample will create a task, targeted at the `log_payload` endpoint, with a payload specified:
+Create a task, targeted at the `log_payload` endpoint, with a payload specified:
 
 ```
 node createTask.js --project=$PROJECT_ID --queue=$QUEUE_ID --location=$LOCATION_ID --payload=hello
 ```
 
-Now view that the payload was received and verify the payload:
+The App Engine app serves as a target for the push requests. It has an
+endpoint `/log_payload` that reads the payload (i.e., the request body) of the
+HTTP POST request and logs it. The log output can be viewed with:
 
-```
-gcloud app logs read
-```
+    gcloud app logs read
 
 Create a task that will be scheduled for a time in the future using the
 `--in_seconds` flag:
