@@ -24,12 +24,25 @@
 /**
  * @namespace google.cloud.tasks.v2beta2
  */
+/**
+ * @namespace google.cloud.tasks.v2beta3
+ */
+/**
+ * @namespace google.protobuf
+ */
+/**
+ * @namespace google.rpc
+ */
+/**
+ * @namespace google.type
+ */
 
 'use strict';
 
 // Import the clients for each version supported by this package.
 const gapic = Object.freeze({
   v2beta2: require('./v2beta2'),
+  v2beta3: require('./v2beta3'),
 });
 
 /**
@@ -74,6 +87,13 @@ module.exports = gapic.v2beta2;
  *   Reference to {@link v2beta2.CloudTasksClient}
  */
 module.exports.v2beta2 = gapic.v2beta2;
+
+/**
+ * @type {object}
+ * @property {constructor} CloudTasksClient
+ *   Reference to {@link v2beta2.CloudTasksClient}
+ */
+module.exports.v2beta3 = gapic.v2beta3;
 
 // Alias `module.exports` as `module.exports.default`, for future-proofing.
 module.exports.default = Object.assign({}, module.exports);
