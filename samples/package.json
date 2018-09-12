@@ -6,7 +6,7 @@
   "author": "Google Inc.",
   "private": true,
   "engines": {
-    "node": "8.x.x"
+    "node": ">=8"
   },
   "scripts": {
     "lint": "repo-tools lint",
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "2.3.0",
+    "ava": "^0.25.0",
     "proxyquire": "2.0.1",
     "sinon": "6.0.1"
   },
