@@ -9,7 +9,7 @@
     "node": ">=8"
   },
   "scripts": {
-    "unit-test": "ava --verbose test/*.test.js",
+    "unit-test": "ava --verbose system-test/*.test.js",
     "system-test": "repo-tools test app --config package.json --config-key cloud-repo-tools",
     "test": "npm run unit-test && npm run system-test"
   },
