@@ -26,12 +26,12 @@ app.use(bodyParser.raw());
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
   // Basic index to verify app is serving
   res.send('Hello, World!').end();
 });
 
-app.post('/log_payload', (req, res, next) => {
+app.post('/log_payload', (req, res) => {
   // Log the request payload
   console.log('Received task with payload: %s', req.body);
   res.send(`Printed task payload: ${req.body}`).end();
