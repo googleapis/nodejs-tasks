@@ -15,6 +15,7 @@ const client = new cloudTasks.CloudTasksClient(); // v2beta2 by default
 - feat: restoring v2beta2 by default ([#71](https://github.com/googleapis/nodejs-tasks/pull/71))
 
 ### Dependencies
+v0.20.0 fixes an issue with semver.
 - bump google-gax 0.20.0 ([#69](https://github.com/googleapis/nodejs-tasks/pull/69))
 
 ### Documentation
