@@ -20,6 +20,7 @@
  */
 function createTask(project, location, queue, options) {
   // [START cloud_tasks_appengine_create_task]
+  // [START tasks_quickstart]
   // Imports the Google Cloud Tasks library.
   const cloudTasks = require('@google-cloud/tasks');
 
@@ -71,6 +72,7 @@ function createTask(project, location, queue, options) {
       console.error(`Error in createTask: ${err.message || err}`);
     });
   // [END cloud_tasks_appengine_create_task]
+  // [END tasks_quickstart]
 }
 
 const cli = require(`yargs`)
