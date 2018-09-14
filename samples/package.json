@@ -22,7 +22,7 @@
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "2.3.0",
     "ava": "^0.25.0",
-    "proxyquire": "2.0.1",
+    "proxyquire": "2.1.0",
     "sinon": "6.0.1"
   },
   "cloud-repo-tools": {
