@@ -44,7 +44,7 @@ function createTask(project, location, queue, options) {
   };
 
   if (options.payload !== undefined) {
-    task.appEngineHttpRequest.payload = Buffer.from(options.payload).toString(
+    task.appEngineHttpRequest.body = Buffer.from(options.payload).toString(
       'base64'
     );
   }
