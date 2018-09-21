@@ -165,7 +165,7 @@ class CloudTasksClient {
       'deleteTask',
       'runTask',
     ];
-    for (const methodName of cloudTasksStubMethods) {
+    for (let methodName of cloudTasksStubMethods) {
       this._innerApiCalls[methodName] = gax.createApiCall(
         cloudTasksStub.then(
           stub =>
