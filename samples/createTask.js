@@ -117,7 +117,9 @@ const cli = require(`yargs`)
 if (module === require.main) {
   const opts = cli.help().parse(process.argv.slice(2));
   process.env.GCLOUD_PROJECT = opts.project;
-  createTask(opts.project, opts.location, opts.queue, opts);
+  createTask(opts.project, opts.location, opts.queue, opts).catch(
+    console.error
+  );
 }
 
 exports.createTask = createTask;
