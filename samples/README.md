@@ -1,7 +1,7 @@
 # Node.js Google Cloud Tasks samples
 
 This sample application shows how to use [Google Cloud Tasks](https://cloud.google.com/cloud-tasks/)
-on [Google App Engine][appengine-flex].
+on [Google App Engine][appengine].
 
 This directory
 contains both the App Engine app to deploy, as well as the snippets to run
@@ -150,5 +150,5 @@ Examples:
 For more information, see https://cloud.google.com/cloud-tasks
 ```
 
-[appengine-flex]: https://cloud.google.com/appengine/docs/nodejs
+[appengine]: https://cloud.google.com/appengine/docs/nodejs
 [appengine-std]: https://cloud.google.com/appengine/docs/standard/nodejs
