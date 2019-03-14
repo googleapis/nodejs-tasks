@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC
+// Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ const uuid = require('uuid');
 
 const PROJECT_ID = process.env.GCLOUD_PROJECT;
 const queueName = `gcloud-${uuid.v4().split('-')[0]}`;
+const url = 'https://' + PROJECT_ID + '.appspot.com/log_payload';
 const cwd = path.join(__dirname, '..');
 const exec = cmd => execa.shell(cmd, {cwd});
 
@@ -33,6 +34,13 @@ describe('Cloud Task Sample Tests', () => {
   it('should create a task', async () => {
     const {stdout} = await exec(
       `node createTask --project=${PROJECT_ID} --location=us-central1 --queue=${queueName}`
+    );
+    assert.ok(stdout.includes('Created task'));
+  });
+
+  it('should create an HTTP task', async () => {
+    const {stdout} = await exec(
+      `node createHttpTask --project=${PROJECT_ID} --location=us-central1 --queue=${queueName} --url=${url}`
     );
     assert.ok(stdout.includes('Created task'));
   });

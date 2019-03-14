@@ -8,7 +8,8 @@
     "node": ">=8"
   },
   "scripts": {
-    "test": "mocha system-test"
+    "test": "mocha system-test",
+    "start": "node server.js"
   },
   "dependencies": {
     "@google-cloud/tasks": "^0.4.0",
