@@ -16,15 +16,22 @@
 'use strict';
 
 /**
- * Create a task for a given queue with an arbitrary payload.
+ * Create a task with an HTTP target for a given queue with an arbitrary payload.
  */
-async function createHttpTask(project, location, queue, url, options) {
+async function createHttpTask(
+  project,
+  location,
+  queue,
+  url,
+  payload,
+  inSeconds
+) {
   // [START cloud_tasks_create_http_task]
   // Imports the Google Cloud Tasks library.
-  const cloudTasks = require('@google-cloud/tasks');
+  const {CloudTasksClient} = require('@google-cloud/tasks');
 
   // Instantiates a client.
-  const client = new cloudTasks.CloudTasksClient();
+  const client = new CloudTasksClient();
 
   // TODO(developer): Uncomment these lines and replace with your values.
   // const project = 'my-project-id';
@@ -39,19 +46,17 @@ async function createHttpTask(project, location, queue, url, options) {
   const task = {
     httpRequest: {
       httpMethod: 'POST',
-      url: url, //The full url path that the request will be sent to.
+      url, //The full url path that the request will be sent to.
     },
   };
 
-  if (options.payload !== undefined) {
-    task.httpRequest.body = Buffer.from(options.payload).toString(
-      'base64'
-    );
+  if (payload) {
+    task.httpRequest.body = Buffer.from(payload).toString('base64');
   }
 
-  if (options.inSeconds !== undefined) {
+  if (inSeconds) {
     task.scheduleTime = {
-      seconds: options.inSeconds + Date.now() / 1000,
+      seconds: inSeconds + Date.now() / 1000,
     };
   }
 
@@ -60,7 +65,8 @@ async function createHttpTask(project, location, queue, url, options) {
     task: task,
   };
 
-  console.log('Sending task %j', task);
+  console.log('Sending task:');
+  console.log(task);
   // Send create task request.
   const [response] = await client.createTask(request);
   const name = response.name;
@@ -69,65 +75,4 @@ async function createHttpTask(project, location, queue, url, options) {
   // [END cloud_tasks_create_http_task]
 }
 
-const cli = require(`yargs`)
-  .options({
-    location: {
-      alias: 'l',
-      description: 'Location of the queue to add the task to.',
-      type: 'string',
-      requiresArg: true,
-      required: true,
-    },
-    queue: {
-      alias: 'q',
-      description: 'ID (short name) of the queue to add the task to.',
-      type: 'string',
-      requiresArg: true,
-      required: true,
-    },
-    project: {
-      alias: 'p',
-      description: 'Project of the queue to add the task to.',
-      default: process.env.GCLOUD_PROJECT,
-      type: 'string',
-      requiresArg: true,
-      required: true,
-    },
-    url: {
-      alias: 'u',
-      description: 'The full url path that the request will be sent to.',
-      default: 'https://' + process.env.GCLOUD_PROJECT +
-               'appspot.com/log_payload',
-      type: 'string',
-      requiresArg: true,
-      required: true,
-    },
-    payload: {
-      alias: 'd',
-      description: '(Optional) Payload to attach to the push queue.',
-      type: 'string',
-      requiresArg: true,
-    },
-    inSeconds: {
-      alias: 's',
-      description:
-        '(Optional) The number of seconds from now to schedule task attempt.',
-      type: 'number',
-      requiresArg: true,
-    },
-  })
-  .example(`node $0 --project my-project-id`)
-  .wrap(120)
-  .recommendCommands()
-  .epilogue(`For more information, see https://cloud.google.com/cloud-tasks`)
-  .strict();
-
-if (module === require.main) {
-  const opts = cli.help().parse(process.argv.slice(2));
-  process.env.GCLOUD_PROJECT = opts.project;
-  createHttpTask(opts.project, opts.location, opts.queue, opts.url, opts).catch(
-    console.error
-  );
-}
-
-exports.createHttpTask = createHttpTask;
+createHttpTask(...process.argv.slice(2)).catch(console.error);

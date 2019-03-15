@@ -16,9 +16,6 @@ a HTTP endpoint.
 `server.js` is the main App Engine app. This app serves as an endpoint to
 receive App Engine task attempts.
 
-`app.flexible.yaml` configures the app for App Engine Node.js flexible
-environment.
-
 * [Setup](#setup)
 * [Running locally](#running-locally)
 * [Deploying to App Engine](#deploying-to-app-engine)
@@ -53,13 +50,9 @@ version unless configured to do otherwise.
 
 ## Deploying the app to App Engine
 
-Deploy to App Engine Flexible environment with gcloud:
+Deploy to App Engine Standard environment with gcloud:
 
-    gcloud app deploy app.flexible.yaml
-
-Or deploy to App Engine Standard environment with gcloud:
-
-    gcloud app deploy app.yaml
+    gcloud app deploy
 
 Verify the index page is serving:
 
