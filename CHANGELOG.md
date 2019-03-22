@@ -8,7 +8,7 @@
 
 03-21-2019 22:39 PDT
 
-**This release has breaking changes**.  The default version of the API has changed from `v2beta3` to `v2`.  Potential breaking changes my apply.
+**This release has breaking changes**.  The default version of the API has changed from `v2beta3` to `v2`.  Potential breaking changes may apply.
 
 ### New Features
 - feat: add v2 of the tasks API ([#192](https://github.com/googleapis/nodejs-tasks/pull/192))
