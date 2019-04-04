@@ -16,7 +16,7 @@
 
 const path = require('path');
 const assert = require('assert');
-const execa = require('execa');
+const {execSync} = require('child_process');
 const uuid = require('uuid');
 
 const PROJECT_ID = process.env.GCLOUD_PROJECT;
@@ -26,19 +26,19 @@ const exec = cmd => execa.shell(cmd, {cwd});
 
 describe('Cloud Task Sample Tests', () => {
   it('should create a queue', async () => {
-    const {stdout} = await exec(`node createQueue ${PROJECT_ID} ${queueName}`);
+    const stdout = execSync(`node createQueue ${PROJECT_ID} ${queueName}`);
     assert.ok(stdout.includes('Created queue'));
   });
 
   it('should create a task', async () => {
-    const {stdout} = await exec(
+    const stdout = execSync(
       `node createTask --project=${PROJECT_ID} --location=us-central1 --queue=${queueName}`
     );
     assert.ok(stdout.includes('Created task'));
   });
 
   it('should delete a queue', async () => {
-    const {stdout} = await exec(`node deleteQueue ${PROJECT_ID} ${queueName}`);
+    const stdout = execSync(`node deleteQueue ${PROJECT_ID} ${queueName}`);
     assert.ok(stdout.includes('Deleted queue'));
   });
 });
