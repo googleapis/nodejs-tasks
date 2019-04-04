@@ -17,6 +17,7 @@
     "yargs": "^13.0.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "mocha": "^6.0.0",
     "uuid": "^3.3.2"
   }
