@@ -90,7 +90,7 @@ Running the sample will create a task, targeted at the `/log_payload`
 endpoint, with a payload specified:
 
 ```
-node createTask.js --project=$PROJECT_ID --queue=$QUEUE_ID --location=$LOCATION_ID --payload=hello
+node createTask.js $PROJECT_ID $LOCATION_ID $QUEUE_ID hello
 ```
 
 The App Engine app serves as a target for the push requests. It has an
@@ -103,7 +103,7 @@ Create a task that will be scheduled for a time in the future using the
 `--in_seconds` flag:
 
 ```
-node createTask.js --project=$PROJECT_ID --queue=$QUEUE_ID --location=$LOCATION_ID --payload=hello --in_seconds=30
+node createTask.js $PROJECT_ID $LOCATION_ID $QUEUE_ID hello 30
 ```
 
 ### Using HTTP Push Queues
@@ -118,7 +118,7 @@ Running the sample will create a task and send the task to the specific URL
 endpoint, with a payload specified:
 
 ```
-node createHttpTask --project=$PROJECT_ID --queue=$QUEUE_ID --location=$LOCATION_ID --url=$URL --payload=hello
+node createHttpTask $PROJECT_ID $LOCATION_ID $QUEUE_ID $URL hello
 ```
 
 ## More Info
