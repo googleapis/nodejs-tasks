@@ -33,14 +33,14 @@ describe('Cloud Task Sample Tests', () => {
 
   it('should create a task', async () => {
     const {stdout} = await exec(
-      `node createTask.js ${PROJECT_ID} us-central1 my-queue payload`
+      `node createTask.js ${PROJECT_ID} us-central1 ${queueName} payload`
     );
     assert.match(stdout, /Created task/);
   });
 
   it('should create an HTTP task', async () => {
     const {stdout} = await exec(
-      `node createHttpTask.js ${PROJECT_ID} us-central1 ${queueName} ${url}`
+      `node createHttpTask.js ${PROJECT_ID} us-central1 my-appengine-queue ${url}`
     );
     assert.match(stdout, /Created task/);
   });
