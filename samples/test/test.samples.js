@@ -26,26 +26,26 @@ const url = `https://${PROJECT_ID}.appspot.com/log_payload`;
 
 describe('Cloud Task Sample Tests', () => {
   it('should create a queue', async () => {
-    const {stdout} = await exec(`node createQueue ${PROJECT_ID} ${queueName}`);
+    const stdout = execSync(`node createQueue ${PROJECT_ID} ${queueName}`);
     assert.match(stdout, /Created queue/);
   });
 
   it('should create a task', async () => {
-    const {stdout} = await exec(
+    const stdout = execSync(
       `node createTask.js ${PROJECT_ID} us-central1 ${queueName} payload`
     );
     assert.match(stdout, /Created task/);
   });
 
   it('should create an HTTP task', async () => {
-    const {stdout} = await exec(
+    const stdout = execSync(
       `node createHttpTask.js ${PROJECT_ID} us-central1 my-appengine-queue ${url}`
     );
     assert.match(stdout, /Created task/);
   });
 
   it('should delete a queue', async () => {
-    const {stdout} = await exec(`node deleteQueue ${PROJECT_ID} ${queueName}`);
+    const stdout = execSync(`node deleteQueue ${PROJECT_ID} ${queueName}`);
     assert.match(stdout, /Deleted queue/);
   });
 });
