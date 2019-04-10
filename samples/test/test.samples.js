@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,29 +22,28 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 const PROJECT_ID = process.env.GCLOUD_PROJECT;
 const queueName = `gcloud-${uuid.v4().split('-')[0]}`;
-const url = `https://${PROJECT_ID}.appspot.com/log_payload`;
 
 describe('Cloud Task Sample Tests', () => {
-  it('should create a queue', async () => {
+  it('should create a queue', () => {
     const stdout = execSync(`node createQueue ${PROJECT_ID} ${queueName}`);
     assert.match(stdout, /Created queue/);
   });
 
-  it('should create a task', async () => {
+  it('should create a task', () => {
     const stdout = execSync(
-      `node createTask.js ${PROJECT_ID} us-central1 ${queueName} payload`
+      `node createTask ${PROJECT_ID} us-central1 ${queueName}`
     );
     assert.match(stdout, /Created task/);
   });
 
-  it('should create an HTTP task', async () => {
+  it('should create a HTTP task', () => {
     const stdout = execSync(
-      `node createHttpTask.js ${PROJECT_ID} us-central1 my-appengine-queue ${url}`
+      `node createHttpTask ${PROJECT_ID} us-central1 my-appengine-queue`
     );
     assert.match(stdout, /Created task/);
   });
 
-  it('should delete a queue', async () => {
+  it('should delete a queue', () => {
     const stdout = execSync(`node deleteQueue ${PROJECT_ID} ${queueName}`);
     assert.match(stdout, /Deleted queue/);
   });

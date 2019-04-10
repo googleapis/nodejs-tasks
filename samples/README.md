@@ -1,4 +1,4 @@
-# Node.js Google Cloud Tasks samples
+# Node.js Google Cloud Tasks sample for Google App Engine
 
 This sample application shows how to use [Google Cloud Tasks](https://cloud.google.com/cloud-tasks/)
 on [Google App Engine][appengine].
