@@ -22,6 +22,7 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 const PROJECT_ID = process.env.GCLOUD_PROJECT;
 const queueName = `gcloud-${uuid.v4().split('-')[0]}`;
+const URL = `https://${PROJECT_ID}.appspot.com/log_payload`;
 
 describe('Cloud Task Sample Tests', () => {
   it('should create a queue', () => {
@@ -38,7 +39,7 @@ describe('Cloud Task Sample Tests', () => {
 
   it('should create a HTTP task', () => {
     const stdout = execSync(
-      `node createHttpTask ${PROJECT_ID} us-central1 my-appengine-queue`
+      `node createHttpTask ${PROJECT_ID} us-central1 my-appengine-queue ${URL}`
     );
     assert.match(stdout, /Created task/);
   });

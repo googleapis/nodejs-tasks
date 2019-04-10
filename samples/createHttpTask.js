@@ -28,10 +28,10 @@ async function createHttpTask(
 ) {
   // [START cloud_tasks_create_http_task]
   // Imports the Google Cloud Tasks library.
-  const {CloudTasksClient} = require('@google-cloud/tasks');
+  const {v2beta3} = require('@google-cloud/tasks');
 
   // Instantiates a client.
-  const client = new CloudTasksClient();
+  const client = new v2beta3.CloudTasksClient();
 
   // TODO(developer): Uncomment these lines and replace with your values.
   // const project = 'my-project-id';
