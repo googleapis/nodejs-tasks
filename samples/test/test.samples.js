@@ -44,6 +44,13 @@ describe('Cloud Task Sample Tests', () => {
     assert.match(stdout, /Created task/);
   });
 
+  it('should create a HTTP task with token', () => {
+    const stdout = execSync(
+      `node createHttpTaskWithToken ${PROJECT_ID} us-central1 my-appengine-queue ${URL} client@projectid.iam.gserviceaccount.com`
+    );
+    assert.match(stdout, /Created task/);
+  });
+
   it('should delete a queue', () => {
     const stdout = execSync(`node deleteQueue ${PROJECT_ID} ${queueName}`);
     assert.match(stdout, /Deleted queue/);
