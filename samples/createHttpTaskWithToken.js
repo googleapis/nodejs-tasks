@@ -48,7 +48,7 @@ async function createHttpTaskWithToken(
   const task = {
     httpRequest: {
       httpMethod: 'POST',
-      url: url, //The full url path that the request will be sent to.
+      url, //The full url path that the request will be sent to.
       oidcToken: {
         serviceAccountEmail: email,
       },
