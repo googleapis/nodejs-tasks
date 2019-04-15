@@ -50,7 +50,7 @@ async function createHttpTaskWithToken(
       httpMethod: 'POST',
       url: url, //The full url path that the request will be sent to.
       oidcToken: {
-        serviceAccountEmail: email
+        serviceAccountEmail: email,
       },
     },
   };
