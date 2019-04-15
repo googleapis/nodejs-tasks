@@ -27,7 +27,7 @@ async function createHttpTaskWithToken(
   payload,
   inSeconds
 ) {
-  // [START cloud_tasks_create_http_task]
+  // [START cloud_tasks_create_http_task_with_token]
   // Imports the Google Cloud Tasks library.
   const {v2beta3} = require('@google-cloud/tasks');
 
@@ -77,7 +77,7 @@ async function createHttpTaskWithToken(
   const name = response.name;
   console.log(`Created task ${name}`);
 
-  // [END cloud_tasks_create_http_task]
+  // [END cloud_tasks_create_http_task_with_token]
 }
 
 createHttpTaskWithToken(...process.argv.slice(2)).catch(console.error);
