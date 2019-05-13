@@ -18,6 +18,7 @@
   * [Create Task](#create-task)
   * [Delete Queue](#delete-queue)
   * [List Queues](#list-queues)
+  * [Quickstart](#quickstart)
   * [Server](#server)
 
 ## Before you begin
@@ -124,6 +125,23 @@ __Usage:__
 
 
 `node listQueues.js`
+
+
+-----
+
+
+
+
+### Quickstart
+
+View the [source code](https://github.com/googleapis/nodejs-tasks/blob/master/samples/quickstart.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-tasks&page=editor&open_in_editor=samples/quickstart.js,samples/README.md)
+
+__Usage:__
+
+
+`node quickstart.js`
 
 
 -----

@@ -29,7 +29,7 @@ Google APIs Client Libraries, in [Client Libraries Explained][explained].
 * [Quickstart](#quickstart)
   * [Before you begin](#before-you-begin)
   * [Installing the client library](#installing-the-client-library)
-
+  * [Using the client library](#using-the-client-library)
 * [Samples](#samples)
 * [Versioning](#versioning)
 * [Contributing](#contributing)
@@ -52,6 +52,56 @@ npm install @google-cloud/tasks
 ```
 
 
+### Using the client library
+
+```javascript
+  // Imports the Google Cloud Tasks library.
+  const {CloudTasksClient} = require('@google-cloud/tasks');
+
+  // Instantiates a client.
+  const client = new CloudTasksClient();
+
+  // TODO(developer): Uncomment these lines and replace with your values.
+  // const project = 'my-project-id';
+  // const queue = 'my-appengine-queue';
+  // const location = 'us-central1';
+  // const options = {payload: 'hello'};
+
+  // Construct the fully qualified queue name.
+  const parent = client.queuePath(project, location, queue);
+
+  const task = {
+    appEngineHttpRequest: {
+      httpMethod: 'POST',
+      relativeUri: '/log_payload',
+    },
+  };
+
+  if (payload) {
+    task.appEngineHttpRequest.body = Buffer.from(payload).toString('base64');
+  }
+
+  if (inSeconds) {
+    task.scheduleTime = {
+      seconds: inSeconds + Date.now() / 1000,
+    };
+  }
+
+  const request = {
+    parent: parent,
+    task: task,
+  };
+
+  console.log('Sending task:');
+  console.log(task);
+  // Send create task request.
+  const [response] = await client.createTask(request);
+  const name = response.name;
+  console.log(`Created task ${name}`);
+
+
+```
+
 
 
 ## Samples
@@ -67,6 +117,7 @@ has instructions for running the samples.
 | Create Task | [source code](https://github.com/googleapis/nodejs-tasks/blob/master/samples/createTask.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-tasks&page=editor&open_in_editor=samples/createTask.js,samples/README.md) |
 | Delete Queue | [source code](https://github.com/googleapis/nodejs-tasks/blob/master/samples/deleteQueue.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-tasks&page=editor&open_in_editor=samples/deleteQueue.js,samples/README.md) |
 | List Queues | [source code](https://github.com/googleapis/nodejs-tasks/blob/master/samples/listQueues.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-tasks&page=editor&open_in_editor=samples/listQueues.js,samples/README.md) |
+| Quickstart | [source code](https://github.com/googleapis/nodejs-tasks/blob/master/samples/quickstart.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-tasks&page=editor&open_in_editor=samples/quickstart.js,samples/README.md) |
 | Server | [source code](https://github.com/googleapis/nodejs-tasks/blob/master/samples/server.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-tasks&page=editor&open_in_editor=samples/server.js,samples/README.md) |
 
 
