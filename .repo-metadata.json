@@ -3,7 +3,7 @@
   "name_pretty": "Cloud Tasks",
   "product_documentation": "https://cloud.google.com/tasks/docs/",
   "client_documentation": "https://cloud.google.com/nodejs/docs/reference/tasks/latest/",
-  "issue_tracker": "https://cloud.google.com/support/docs/issue-trackers",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/5433985",
   "release_level": "ga",
   "language": "nodejs",
   "repo": "googleapis/nodejs-tasks",
