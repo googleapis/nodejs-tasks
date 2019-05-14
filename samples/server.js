@@ -22,9 +22,7 @@ const express = require('express');
 const app = express();
 app.enable('trust proxy');
 
-app.use(bodyParser.raw());
-app.use(bodyParser.json());
-app.use(bodyParser.text());
+app.use(bodyParser.raw({type: 'application/octet-stream'}));
 
 app.get('/', (req, res) => {
   // Basic index to verify app is serving
