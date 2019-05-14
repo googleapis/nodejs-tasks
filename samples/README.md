@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [//]: # "This README.md file is auto-generated, all changes to this file will be lost."
 [//]: # "To regenerate it, use `python -m synthtool`."
 <img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Cloud Platform logo" title="Google Cloud Platform" align="right" height="96" width="96"/>
@@ -9,6 +10,24 @@
 
 
 ## Table of Contents
+=======
+# Node.js Google Cloud Tasks Samples
+
+This sample application shows how to use [Google Cloud Tasks](https://cloud.google.com/cloud-tasks/)
+client library.
+
+`createTask.js` constructs a task with an App Engine target and pushes it
+to your queue.
+
+`server.js` is a task handler. This example app that has an endpoint to
+receive App Engine task attempts.
+
+`createHttpTask.js` constructs a task with an HTTP target and pushes it
+to your queue.
+
+`createHttpTaskWithToken.js` constructs a task with an HTTP target and OIDC
+token and pushes it to your queue.
+>>>>>>> 1a50d61f206bcbd891437b13af541092f5e0b71f
 
 * [Before you begin](#before-you-begin)
 * [Samples](#samples)
