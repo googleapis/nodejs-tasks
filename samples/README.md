@@ -1,20 +1,19 @@
-# Node.js Google Cloud Tasks sample for Google App Engine
+# Node.js Google Cloud Tasks Samples
 
 This sample application shows how to use [Google Cloud Tasks](https://cloud.google.com/cloud-tasks/)
-on [Google App Engine][appengine].
+client library.
 
-This directory
-contains both the App Engine app to deploy, as well as the snippets to run
-locally to push tasks to it, which could also be called on App Engine.
+`createTask.js` constructs a task with an App Engine target and pushes it
+to your queue.
 
-`createTask.js` is a simple command-line program to create tasks to be pushed to
-the App Engine app.
-
-`createHttpTask.js` is a simple command-line program to create tasks to be pushed to
-a HTTP endpoint.
-
-`server.js` is the main App Engine app. This app serves as an endpoint to
+`server.js` is a task handler. This example app that has an endpoint to
 receive App Engine task attempts.
+
+`createHttpTask.js` constructs a task with an HTTP target and pushes it
+to your queue.
+
+`createHttpTaskWithToken.js` constructs a task with an HTTP target and OIDC
+token and pushes it to your queue.
 
 * [Setup](#setup)
 * [Running locally](#running-locally)
@@ -43,12 +42,52 @@ Before you can run or deploy the sample, you need to do the following:
 
 To create a queue using the Cloud SDK, use the following gcloud command:
 
-    gcloud beta tasks queues create-app-engine-queue my-appengine-queue
+    gcloud beta tasks queues create <QUEUE_NAME>
 
-Note: A newly created queue will route to the default App Engine service and
-version unless configured to do otherwise.
+## Run the Sample Using the Command Line
 
-## Deploying the app to App Engine
+Set environment variables:
+
+First, your project ID:
+
+```
+export PROJECT_ID=<PROJECT_ID>
+```
+
+Then the queue ID, as specified at queue creation time. Queue IDs already
+created can be listed with `gcloud beta tasks queues list`.
+
+```
+export QUEUE_ID=<QUEUE_NAME>
+```
+
+And finally the location ID, which can be discovered with
+`gcloud beta tasks queues describe $QUEUE_ID`, with the location embedded in
+the "name" value (for instance, if the name is
+"projects/my-project/locations/us-central1/queues/my-queue", then the
+location is "us-central1").
+
+```
+export LOCATION_ID=us-central1
+```
+
+### Creating Tasks with App Engine Targets
+
+Running the sample will create a task, targeted at the `/log_payload`
+endpoint, with a payload `hello`:
+
+```
+node createTask.js $PROJECT_ID $LOCATION_ID $QUEUE_ID hello
+```
+
+Create a task that will be scheduled for a time in the future by appending the
+wait time in seconds:
+
+```
+node createTask.js $PROJECT_ID $LOCATION_ID $QUEUE_ID hello 30
+```
+
+#### Using an App Engine Task Handler
 
 Deploy to App Engine Standard environment with gcloud:
 
@@ -58,60 +97,18 @@ Verify the index page is serving:
 
     gcloud app browse
 
-## Run the Sample Using the Command Line
-
-Set environment variables:
-
-First, your project ID:
-
-```
-export PROJECT_ID=my-project-id
-```
-
-Then the queue ID, as specified at queue creation time. Queue IDs already
-created can be listed with `gcloud beta tasks queues list`.
-
-```
-export QUEUE_ID=my-appengine-queue
-```
-
-And finally the location ID, which can be discovered with
-`gcloud beta tasks queues describe $QUEUE_ID`, with the location embedded in
-the "name" value (for instance, if the name is
-"projects/my-project/locations/us-central1/queues/my-appengine-queue", then the
-location is "us-central1").
-
-```
-export LOCATION_ID=us-central1
-```
-
-### Using App Engine Queues
-Running the sample will create a task, targeted at the `/log_payload`
-endpoint, with a payload specified:
-
-```
-node createTask.js $PROJECT_ID $LOCATION_ID $QUEUE_ID hello
-```
-
 The App Engine app serves as a target for the push requests. It has an
 endpoint `/log_payload` that reads the payload (i.e., the request body) of the
 HTTP POST request and logs it. The log output can be viewed with:
 
     gcloud app logs read
 
-Create a task that will be scheduled for a time in the future using the
-`--in_seconds` flag:
-
-```
-node createTask.js $PROJECT_ID $LOCATION_ID $QUEUE_ID hello 30
-```
-
-### Using HTTP Push Queues
+### Creating Tasks with App Engine Targets
 
 Set an environment variable for the endpoint to your task handler. This is an
-example url to send requests to the App Engine task handler:
+example url:
 ```
-export URL=https://<project_id>.appspot.com/log_payload
+export URL=https://example.com/taskhandler
 ```
 
 Running the sample will create a task and send the task to the specific URL
@@ -120,6 +117,24 @@ endpoint, with a payload specified:
 ```
 node createHttpTask $PROJECT_ID $LOCATION_ID $QUEUE_ID $URL hello
 ```
+
+### Using HTTP Targets with Authentication Tokens
+
+Your Cloud Tasks [service account][sa],
+(service-<project-number>@gcp-sa-cloudtasks.iam.gserviceaccount.com), must
+have the role of: `Service Account Token Creator` to generate a tokens.
+
+Create or use an existing [service account][sa] to authenticate the OIDC token
+and set an environment variable:
+```
+export SERVICE_ACCOUNT=<SERVICE_ACCOUNT_EMAIL>
+```
+
+Running the sample with command:
+```
+node createHttpTaskWithToken $PROJECT_ID $LOCATION_ID $QUEUE_ID $URL $SERVICE_ACCOUNT hello
+```
+
 
 ## More Info
 
@@ -145,3 +160,4 @@ For more information, see https://cloud.google.com/cloud-tasks
 
 [appengine]: https://cloud.google.com/appengine/docs/nodejs
 [appengine-std]: https://cloud.google.com/appengine/docs/standard/nodejs
+[sa]: https://cloud.google.com/iam/docs/service-accounts
