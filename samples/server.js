@@ -22,7 +22,8 @@ const express = require('express');
 const app = express();
 app.enable('trust proxy');
 
-// Set the parser the default request Content-Type of 'application/octet-stream'
+// By default, the Content-Type header of the Task request is set to "application/octet-stream"
+// see https://cloud.google.com/tasks/docs/reference/rest/v2beta3/projects.locations.queues.tasks#AppEngineHttpRequest
 app.use(bodyParser.raw({type: 'application/octet-stream'}));
 
 app.get('/', (req, res) => {
