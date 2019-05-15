@@ -22,6 +22,7 @@ const express = require('express');
 const app = express();
 app.enable('trust proxy');
 
+// Set the parser the default request Content-Type of 'application/octet-stream'
 app.use(bodyParser.raw({type: 'application/octet-stream'}));
 
 app.get('/', (req, res) => {
