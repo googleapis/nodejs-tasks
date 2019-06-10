@@ -15,6 +15,11 @@
 
 'use strict';
 
+// sample-metadata:
+//   title: Cloud Tasks Create HTTP Target
+//   description: Create Cloud Tasks with a HTTP Target
+//   usage: node createHttpTask.js
+
 /**
  * Create a task with an HTTP target for a given queue with an arbitrary payload.
  */
