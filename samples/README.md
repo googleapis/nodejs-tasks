@@ -12,8 +12,8 @@
 
 * [Before you begin](#before-you-begin)
 * [Samples](#samples)
-  * [Create Http Task](#create-http-task)
-  * [Create Http Task With Token](#create-http-task-with-token)
+  * [Create HTTP Task](#create-http-task)
+  * [Create HTTP Task With Token](#create-http-task-with-token)
   * [Create Queue](#create-queue)
   * [Create Task](#create-task)
   * [Delete Queue](#delete-queue)
@@ -30,7 +30,7 @@ Before running the samples, make sure you've followed the steps outlined in
 
 
 
-### Create Http Task
+### Create HTTP Task
 
 View the [source code](https://github.com/googleapis/nodejs-tasks/blob/master/samples/createHttpTask.js).
 
@@ -47,7 +47,7 @@ __Usage:__
 
 
 
-### Create Http Task With Token
+### Create HTTP Task With Token
 
 View the [source code](https://github.com/googleapis/nodejs-tasks/blob/master/samples/createHttpTaskWithToken.js).
 
