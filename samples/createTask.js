@@ -18,7 +18,7 @@
 // sample-metadata:
 //   title: Cloud Tasks Create App Engine Target
 //   description: Create Cloud Tasks with a Google App Engine Target
-//   usage: node createTask.js
+//   usage: node createTask.js <projectId> <queueName> <location> <payload> <delayInSeconds>
 
 /**
  * Create a task for a given queue with an arbitrary payload.
@@ -59,7 +59,8 @@ async function createTask(
   }
 
   if (inSeconds) {
-    task.scheduleTime = { // The time when the task is scheduled to be attempted.
+    // The time when the task is scheduled to be attempted.
+    task.scheduleTime = {
       seconds: inSeconds + Date.now() / 1000,
     };
   }

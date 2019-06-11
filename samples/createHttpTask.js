@@ -18,7 +18,7 @@
 // sample-metadata:
 //   title: Cloud Tasks Create HTTP Target
 //   description: Create Cloud Tasks with a HTTP Target
-//   usage: node createHttpTask.js
+//   usage: node createHttpTask.js <projectId> <queueName> <location> <url> <payload> <delayInSeconds>
 
 /**
  * Create a task with an HTTP target for a given queue with an arbitrary payload.
@@ -60,6 +60,7 @@ async function createHttpTask(
   }
 
   if (inSeconds) {
+    // The time when the task is scheduled to be attempted.
     task.scheduleTime = {
       seconds: inSeconds + Date.now() / 1000,
     };

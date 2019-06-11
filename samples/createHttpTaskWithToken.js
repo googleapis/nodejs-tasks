@@ -18,7 +18,7 @@
 // sample-metadata:
 //   title: Cloud Tasks Create HTTP Target with Token
 //   description: Create Cloud Tasks with a HTTP Target with Token
-//   usage: node createHttpTaskWithToken.js
+//   usage: node createHttpTaskWithToken.js <projectId> <queueName> <location> <url> <serviceAccountEmail> <payload> <delayInSeconds>
 
 /**
  * Create a task with an HTTP target for a given queue with an arbitrary payload.
@@ -65,6 +65,7 @@ async function createHttpTaskWithToken(
   }
 
   if (inSeconds) {
+    // The time when the task is scheduled to be attempted.
     task.scheduleTime = {
       seconds: inSeconds + Date.now() / 1000,
     };
