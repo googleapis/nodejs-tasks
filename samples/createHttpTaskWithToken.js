@@ -27,7 +27,7 @@ async function createHttpTaskWithToken(
   project = 'my-project-id', // Your GCP Project id
   queue = 'my-queue', // Name of your Queue
   location = 'us-central1', // The GCP region of your queue
-  url = 'https://example.com/taskhandler',  //The full url path that the request will be sent to
+  url = 'https://example.com/taskhandler', // The full url path that the request will be sent to
   email = 'client@<project-id>.iam.gserviceaccount.com', // Cloud IAM service account
   payload = 'Hello, World!', // The task HTTP request body
   inSeconds = 0 // Delay in task execution
