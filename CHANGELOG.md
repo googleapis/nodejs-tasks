@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/nodejs-tasks?activeTab=versions
 
+### [1.2.2](https://www.github.com/googleapis/nodejs-tasks/compare/v1.2.1...v1.2.2) (2019-08-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency yargs to v14 ([d959ff7](https://www.github.com/googleapis/nodejs-tasks/commit/d959ff7))
+
 ### [1.2.1](https://www.github.com/googleapis/nodejs-tasks/compare/v1.2.0...v1.2.1) (2019-08-05)
 
 
