@@ -120,7 +120,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -151,7 +155,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -304,7 +312,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -325,7 +337,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -353,7 +369,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -384,7 +404,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -413,7 +437,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -444,7 +472,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -473,7 +505,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -504,7 +540,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedName = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         name: formattedName,
       };
@@ -533,7 +573,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedResource = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         resource: formattedResource,
       };
@@ -566,7 +610,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedResource = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         resource: formattedResource,
       };
@@ -595,7 +643,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedResource = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const policy = {};
       const request = {
         resource: formattedResource,
@@ -630,7 +682,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedResource = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const policy = {};
       const request = {
         resource: formattedResource,
@@ -661,7 +717,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedResource = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const permissions = [];
       const request = {
         resource: formattedResource,
@@ -691,7 +751,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedResource = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const permissions = [];
       const request = {
         resource: formattedResource,
@@ -722,7 +786,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedParent = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         parent: formattedParent,
       };
@@ -756,7 +824,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedParent = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const request = {
         parent: formattedParent,
       };
@@ -785,7 +857,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const request = {
         name: formattedName,
       };
@@ -816,7 +893,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const request = {
         name: formattedName,
       };
@@ -845,7 +927,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedParent = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const task = {};
       const request = {
         parent: formattedParent,
@@ -878,7 +964,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedParent = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const task = {};
       const request = {
         parent: formattedParent,
@@ -909,7 +999,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const request = {
         name: formattedName,
       };
@@ -930,7 +1025,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const request = {
         name: formattedName,
       };
@@ -958,7 +1058,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedParent = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const leaseDuration = {};
       const request = {
         parent: formattedParent,
@@ -988,7 +1092,11 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+      const formattedParent = client.queuePath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]'
+      );
       const leaseDuration = {};
       const request = {
         parent: formattedParent,
@@ -1019,7 +1127,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const scheduleTime = {};
       const request = {
         name: formattedName,
@@ -1042,7 +1155,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const scheduleTime = {};
       const request = {
         name: formattedName,
@@ -1072,7 +1190,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const scheduleTime = {};
       const leaseDuration = {};
       const request = {
@@ -1107,7 +1230,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const scheduleTime = {};
       const leaseDuration = {};
       const request = {
@@ -1140,7 +1268,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const scheduleTime = {};
       const request = {
         name: formattedName,
@@ -1173,7 +1306,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const scheduleTime = {};
       const request = {
         name: formattedName,
@@ -1204,7 +1342,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const request = {
         name: formattedName,
       };
@@ -1235,7 +1378,12 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedName = client.taskPath('[PROJECT]', '[LOCATION]', '[QUEUE]', '[TASK]');
+      const formattedName = client.taskPath(
+        '[PROJECT]',
+        '[LOCATION]',
+        '[QUEUE]',
+        '[TASK]'
+      );
       const request = {
         name: formattedName,
       };
@@ -1255,7 +1403,6 @@ describe('CloudTasksClient', () => {
       });
     });
   });
-
 });
 
 function mockSimpleGrpcMethod(expectedRequest, response, error) {
