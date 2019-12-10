@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 
 app.post('/log_payload', (req, res) => {
   // Log the request payload
-  console.log('Received task with payload: %s', req.body);
+  console.log('Received task with payload: %s', Buffer.from(req.body, 'base64').toString('ascii'));
   res.send(`Printed task payload: ${req.body}`).end();
 });
 

@@ -32,7 +32,7 @@ async function createHttpTask(
 ) {
   // [START cloud_tasks_create_http_task]
   // Imports the Google Cloud Tasks library.
-  const {CloudTasksClient} = require('@google-cloud/tasks');
+  const { CloudTasksClient } = require('@google-cloud/tasks');
 
   // Instantiates a client.
   const client = new CloudTasksClient();
@@ -42,7 +42,7 @@ async function createHttpTask(
   // const queue = 'my-queue';
   // const location = 'us-central1';
   // const url = 'https://example.com/taskhandler';
-  // const payload = 'Hello, World!';
+  // const payload = 'Hello, World!';  // If you want to send Json, make a JSON.stringify on your var before
 
   // Construct the fully qualified queue name.
   const parent = client.queuePath(project, location, queue);
@@ -51,6 +51,9 @@ async function createHttpTask(
     httpRequest: {
       httpMethod: 'POST',
       url,
+      headers: {
+        'content-type': 'application/octet-stream'
+      }
     },
   };
 
@@ -68,7 +71,7 @@ async function createHttpTask(
   // Send create task request.
   console.log('Sending task:');
   console.log(task);
-  const request = {parent, task};
+  const request = { parent, task };
   const [response] = await client.createTask(request);
   console.log(`Created task ${response.name}`);
   // [END cloud_tasks_create_http_task]
