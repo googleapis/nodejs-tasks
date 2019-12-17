@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-12-17T22:07:58.532003Z",
+  "updateTime": "2019-12-17T22:09:46.634300Z",
   "sources": [
     {
       "git": {
@@ -160,30 +160,6 @@
     },
     {
       "path": "system-test/fixtures/sample/src/index.ts"
-    },
-    {
-      "path": "node_modules/protobufjs/cli/package-lock.json"
-    },
-    {
-      "path": "node_modules/protobufjs/cli/package.json"
-    },
-    {
-      "path": "node_modules/protobufjs/cli/node_modules/acorn/package.json"
-    },
-    {
-      "path": "node_modules/protobufjs/cli/node_modules/minimist/package.json"
-    },
-    {
-      "path": "node_modules/protobufjs/cli/node_modules/semver/package.json"
-    },
-    {
-      "path": "node_modules/protobufjs/cli/node_modules/acorn-jsx/package.json"
-    },
-    {
-      "path": "node_modules/protobufjs/cli/node_modules/acorn-jsx/node_modules/acorn/package.json"
-    },
-    {
-      "path": "node_modules/protobufjs/cli/node_modules/espree/package.json"
     },
     {
       "path": "samples/README.md"
