@@ -129,7 +129,6 @@ class CloudTasksClient {
       locationPathTemplate: new gaxModule.PathTemplate(
         'projects/{project}/locations/{location}'
       ),
-      projectPathTemplate: new gaxModule.PathTemplate('projects/{project}'),
       queuePathTemplate: new gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/queues/{queue}'
       ),
@@ -946,8 +945,8 @@ class CloudTasksClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
-   * client.getIamPolicy({resource: formattedResource})
+   * const resource = '';
+   * client.getIamPolicy({resource: resource})
    *   .then(responses => {
    *     const response = responses[0];
    *     // doThingsWith(response)
@@ -1018,10 +1017,10 @@ class CloudTasksClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+   * const resource = '';
    * const policy = {};
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   policy: policy,
    * };
    * client.setIamPolicy(request)
@@ -1089,10 +1088,10 @@ class CloudTasksClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.queuePath('[PROJECT]', '[LOCATION]', '[QUEUE]');
+   * const resource = '';
    * const permissions = [];
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   permissions: permissions,
    * };
    * client.testIamPermissions(request)
@@ -1669,18 +1668,6 @@ class CloudTasksClient {
   }
 
   /**
-   * Return a fully-qualified project resource name string.
-   *
-   * @param {String} project
-   * @returns {String}
-   */
-  projectPath(project) {
-    return this._pathTemplates.projectPathTemplate.render({
-      project: project,
-    });
-  }
-
-  /**
    * Return a fully-qualified queue resource name string.
    *
    * @param {String} project
@@ -1735,17 +1722,6 @@ class CloudTasksClient {
   matchLocationFromLocationName(locationName) {
     return this._pathTemplates.locationPathTemplate.match(locationName)
       .location;
-  }
-
-  /**
-   * Parse the projectName from a project resource.
-   *
-   * @param {String} projectName
-   *   A fully-qualified path representing a project resources.
-   * @returns {String} - A string representing the project.
-   */
-  matchProjectFromProjectName(projectName) {
-    return this._pathTemplates.projectPathTemplate.match(projectName).project;
   }
 
   /**
