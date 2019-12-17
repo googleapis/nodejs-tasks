@@ -22,17 +22,22 @@ import subprocess
 logging.basicConfig(level=logging.DEBUG)
 
 # Run the gapic generator
-gapic = gcp.GAPICGenerator()
+gapic = gcp.GAPICMicrogenerator()
 versions = ["v2beta2", "v2beta3", "v2"]
 for version in versions:
-    library = gapic.node_library(
-        "tasks", version, config_path=f"artman_cloudtasks_{version}.yaml"
+    library = gapic.typescript_library(
+        "tasks", version, 
+        generator_args={
+            "grpc-service-config": f"google/cloud/tasks/{version}/cloudtasks_grpc_service_config.json",
+            "package-name":f"@google-cloud/tasks"
+        },
+        proto_path=f'/google/cloud/tasks/{version}',
     )
-    s.copy(library, excludes=["README.md", "package.json", "src/index.js"])
+    s.copy(library, excludes=["README.md", "package.json", "src/index.ts"])
 
 # Copy common templates
 common_templates = gcp.CommonTemplates()
-templates = common_templates.node_library()
+templates = common_templates.node_library(source_location='build/src')
 s.copy(templates)
 
 # [START fix-dead-link]
