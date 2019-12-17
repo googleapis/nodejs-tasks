@@ -32,6 +32,7 @@ for version in versions:
             "package-name":f"@google-cloud/tasks"
         },
         proto_path=f'/google/cloud/tasks/{version}',
+        extra_proto_files=['google/cloud/common_resources.proto'],
     )
     s.copy(library, excludes=["README.md", "package.json", "src/index.ts"])
 

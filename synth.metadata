@@ -1,12 +1,12 @@
 {
-  "updateTime": "2019-12-17T22:09:46.634300Z",
+  "updateTime": "2019-12-17T23:02:09.169087Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "6ad2bb13bc4b0f3f785517f0563118f6ca52ddfd",
-        "internalRef": "286008145"
+        "sha": "3352100a15ede383f5ab3c34599f7a10a3d066fe",
+        "internalRef": "286065440"
       }
     },
     {
@@ -96,13 +96,7 @@
       "path": "linkinator.config.json"
     },
     {
-      "path": "protos/protos.d.ts"
-    },
-    {
-      "path": "protos/protos.json"
-    },
-    {
-      "path": "protos/protos.js"
+      "path": "protos/google/cloud/common_resources.proto"
     },
     {
       "path": "protos/google/cloud/tasks/v2/queue.proto"
@@ -162,6 +156,9 @@
       "path": "system-test/fixtures/sample/src/index.ts"
     },
     {
+      "path": "__pycache__/synth.cpython-36.pyc"
+    },
+    {
       "path": "samples/README.md"
     },
     {
@@ -187,6 +184,9 @@
     },
     {
       "path": "build/protos/protos.js"
+    },
+    {
+      "path": "build/protos/google/cloud/common_resources.proto"
     },
     {
       "path": "build/protos/google/cloud/tasks/v2/queue.proto"
