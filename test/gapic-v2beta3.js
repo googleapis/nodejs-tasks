@@ -573,13 +573,9 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      const resource = 'resource-341064690';
       const request = {
-        resource: formattedResource,
+        resource: resource,
       };
 
       // Mock response
@@ -610,13 +606,9 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      const resource = 'resource-341064690';
       const request = {
-        resource: formattedResource,
+        resource: resource,
       };
 
       // Mock Grpc layer
@@ -643,14 +635,10 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      const resource = 'resource-341064690';
       const policy = {};
       const request = {
-        resource: formattedResource,
+        resource: resource,
         policy: policy,
       };
 
@@ -682,14 +670,10 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      const resource = 'resource-341064690';
       const policy = {};
       const request = {
-        resource: formattedResource,
+        resource: resource,
         policy: policy,
       };
 
@@ -717,14 +701,10 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      const resource = 'resource-341064690';
       const permissions = [];
       const request = {
-        resource: formattedResource,
+        resource: resource,
         permissions: permissions,
       };
 
@@ -751,14 +731,10 @@ describe('CloudTasksClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.queuePath(
-        '[PROJECT]',
-        '[LOCATION]',
-        '[QUEUE]'
-      );
+      const resource = 'resource-341064690';
       const permissions = [];
       const request = {
-        resource: formattedResource,
+        resource: resource,
         permissions: permissions,
       };
 
