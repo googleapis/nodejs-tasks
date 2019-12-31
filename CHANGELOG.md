@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/nodejs-tasks?activeTab=versions
 
+### [1.6.2](https://www.github.com/googleapis/nodejs-tasks/compare/v1.6.1...v1.6.2) (2019-12-31)
+
+
+### Bug Fixes
+
+* **deps:** pin TypeScript below 3.7.0 ([124594b](https://www.github.com/googleapis/nodejs-tasks/commit/124594b3f00287c3a6f33c158aa4117dd03c52ca))
+
 ### [1.6.1](https://www.github.com/googleapis/nodejs-tasks/compare/v1.6.0...v1.6.1) (2019-11-18)
 
 
