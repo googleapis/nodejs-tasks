@@ -49,6 +49,12 @@ s.replace('**/doc/google/protobuf/doc_timestamp.js',
 s.replace('**/doc/google/protobuf/doc_timestamp.js',
         'toISOString\]',
         'toISOString)')
+s.replace('**/src/**/cloud_tasks_client_config.json',
+        '"initial_rpc_timeout_millis": 60000',
+        '"initial_rpc_timeout_millis": 20000')
+s.replace('**/src/**/cloud_tasks_client_config.json',
+        '"max_rpc_timeout_millis": 60000',
+        '"max_rpc_timeout_millis": 20000')        
 # [END fix-dead-link]
 
 # Node.js specific cleanup
