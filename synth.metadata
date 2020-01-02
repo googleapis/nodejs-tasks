@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-02T22:52:02.328837Z",
+  "updateTime": "2020-01-02T23:16:34.463191Z",
   "sources": [
     {
       "git": {
@@ -160,6 +160,135 @@
     },
     {
       "path": "system-test/fixtures/sample/src/index.ts"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/package-lock.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/path-is-absolute/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/os-tmpdir/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/prelude-ls/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/escape-string-regexp/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/commander/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/balanced-match/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/acorn/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/once/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/inherits/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/color-name/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/minimist/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/esutils/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/chalk/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/esprima/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/has-flag/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/supports-color/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/color-convert/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/brace-expansion/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/word-wrap/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/semver/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/minimatch/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/estraverse/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/ansi-styles/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/acorn-jsx/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/acorn-jsx/node_modules/acorn/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/fs.realpath/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/levn/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/concat-map/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/optionator/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/espree/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/glob/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/fast-levenshtein/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/source-map/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/escodegen/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/uglify-js/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/wrappy/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/tmp/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/deep-is/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/type-check/package.json"
+    },
+    {
+      "path": "node_modules/google-gax/node_modules/protobufjs/cli/node_modules/inflight/package.json"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
     },
     {
       "path": "samples/README.md"
