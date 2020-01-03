@@ -29,7 +29,8 @@ for version in versions:
         "tasks", version, 
         generator_args={
             "grpc-service-config": f"google/cloud/tasks/{version}/cloudtasks_grpc_service_config.json",
-            "package-name":f"@google-cloud/tasks"
+            "package-name":f"@google-cloud/tasks",
+            "main-service": f"tasks"
         },
         proto_path=f'/google/cloud/tasks/{version}',
         extra_proto_files=['google/cloud/common_resources.proto'],
