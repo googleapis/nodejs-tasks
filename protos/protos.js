@@ -1,3 +1,17 @@
+// Copyright 2020 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 (function(global, factory) { /* global define, require, module */
 
@@ -3883,6 +3897,7 @@
                          * @property {google.cloud.tasks.v2.IRetryConfig|null} [retryConfig] Queue retryConfig
                          * @property {google.cloud.tasks.v2.Queue.State|null} [state] Queue state
                          * @property {google.protobuf.ITimestamp|null} [purgeTime] Queue purgeTime
+                         * @property {google.cloud.tasks.v2.IStackdriverLoggingConfig|null} [stackdriverLoggingConfig] Queue stackdriverLoggingConfig
                          */
     
                         /**
@@ -3949,6 +3964,14 @@
                         Queue.prototype.purgeTime = null;
     
                         /**
+                         * Queue stackdriverLoggingConfig.
+                         * @member {google.cloud.tasks.v2.IStackdriverLoggingConfig|null|undefined} stackdriverLoggingConfig
+                         * @memberof google.cloud.tasks.v2.Queue
+                         * @instance
+                         */
+                        Queue.prototype.stackdriverLoggingConfig = null;
+    
+                        /**
                          * Creates a new Queue instance using the specified properties.
                          * @function create
                          * @memberof google.cloud.tasks.v2.Queue
@@ -3984,6 +4007,8 @@
                                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.state);
                             if (message.purgeTime != null && message.hasOwnProperty("purgeTime"))
                                 $root.google.protobuf.Timestamp.encode(message.purgeTime, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                            if (message.stackdriverLoggingConfig != null && message.hasOwnProperty("stackdriverLoggingConfig"))
+                                $root.google.cloud.tasks.v2.StackdriverLoggingConfig.encode(message.stackdriverLoggingConfig, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                             return writer;
                         };
     
@@ -4035,6 +4060,9 @@
                                     break;
                                 case 6:
                                     message.purgeTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                                    break;
+                                case 9:
+                                    message.stackdriverLoggingConfig = $root.google.cloud.tasks.v2.StackdriverLoggingConfig.decode(reader, reader.uint32());
                                     break;
                                 default:
                                     reader.skipType(tag & 7);
@@ -4104,6 +4132,11 @@
                                 if (error)
                                     return "purgeTime." + error;
                             }
+                            if (message.stackdriverLoggingConfig != null && message.hasOwnProperty("stackdriverLoggingConfig")) {
+                                var error = $root.google.cloud.tasks.v2.StackdriverLoggingConfig.verify(message.stackdriverLoggingConfig);
+                                if (error)
+                                    return "stackdriverLoggingConfig." + error;
+                            }
                             return null;
                         };
     
@@ -4159,6 +4192,11 @@
                                     throw TypeError(".google.cloud.tasks.v2.Queue.purgeTime: object expected");
                                 message.purgeTime = $root.google.protobuf.Timestamp.fromObject(object.purgeTime);
                             }
+                            if (object.stackdriverLoggingConfig != null) {
+                                if (typeof object.stackdriverLoggingConfig !== "object")
+                                    throw TypeError(".google.cloud.tasks.v2.Queue.stackdriverLoggingConfig: object expected");
+                                message.stackdriverLoggingConfig = $root.google.cloud.tasks.v2.StackdriverLoggingConfig.fromObject(object.stackdriverLoggingConfig);
+                            }
                             return message;
                         };
     
@@ -4182,6 +4220,7 @@
                                 object.retryConfig = null;
                                 object.state = options.enums === String ? "STATE_UNSPECIFIED" : 0;
                                 object.purgeTime = null;
+                                object.stackdriverLoggingConfig = null;
                             }
                             if (message.name != null && message.hasOwnProperty("name"))
                                 object.name = message.name;
@@ -4195,6 +4234,8 @@
                                 object.state = options.enums === String ? $root.google.cloud.tasks.v2.Queue.State[message.state] : message.state;
                             if (message.purgeTime != null && message.hasOwnProperty("purgeTime"))
                                 object.purgeTime = $root.google.protobuf.Timestamp.toObject(message.purgeTime, options);
+                            if (message.stackdriverLoggingConfig != null && message.hasOwnProperty("stackdriverLoggingConfig"))
+                                object.stackdriverLoggingConfig = $root.google.cloud.tasks.v2.StackdriverLoggingConfig.toObject(message.stackdriverLoggingConfig, options);
                             return object;
                         };
     
@@ -4751,6 +4792,193 @@
                         };
     
                         return RetryConfig;
+                    })();
+    
+                    v2.StackdriverLoggingConfig = (function() {
+    
+                        /**
+                         * Properties of a StackdriverLoggingConfig.
+                         * @memberof google.cloud.tasks.v2
+                         * @interface IStackdriverLoggingConfig
+                         * @property {number|null} [samplingRatio] StackdriverLoggingConfig samplingRatio
+                         */
+    
+                        /**
+                         * Constructs a new StackdriverLoggingConfig.
+                         * @memberof google.cloud.tasks.v2
+                         * @classdesc Represents a StackdriverLoggingConfig.
+                         * @implements IStackdriverLoggingConfig
+                         * @constructor
+                         * @param {google.cloud.tasks.v2.IStackdriverLoggingConfig=} [properties] Properties to set
+                         */
+                        function StackdriverLoggingConfig(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * StackdriverLoggingConfig samplingRatio.
+                         * @member {number} samplingRatio
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @instance
+                         */
+                        StackdriverLoggingConfig.prototype.samplingRatio = 0;
+    
+                        /**
+                         * Creates a new StackdriverLoggingConfig instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @static
+                         * @param {google.cloud.tasks.v2.IStackdriverLoggingConfig=} [properties] Properties to set
+                         * @returns {google.cloud.tasks.v2.StackdriverLoggingConfig} StackdriverLoggingConfig instance
+                         */
+                        StackdriverLoggingConfig.create = function create(properties) {
+                            return new StackdriverLoggingConfig(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified StackdriverLoggingConfig message. Does not implicitly {@link google.cloud.tasks.v2.StackdriverLoggingConfig.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @static
+                         * @param {google.cloud.tasks.v2.IStackdriverLoggingConfig} message StackdriverLoggingConfig message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        StackdriverLoggingConfig.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.samplingRatio != null && message.hasOwnProperty("samplingRatio"))
+                                writer.uint32(/* id 1, wireType 1 =*/9).double(message.samplingRatio);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified StackdriverLoggingConfig message, length delimited. Does not implicitly {@link google.cloud.tasks.v2.StackdriverLoggingConfig.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @static
+                         * @param {google.cloud.tasks.v2.IStackdriverLoggingConfig} message StackdriverLoggingConfig message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        StackdriverLoggingConfig.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a StackdriverLoggingConfig message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.tasks.v2.StackdriverLoggingConfig} StackdriverLoggingConfig
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        StackdriverLoggingConfig.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.tasks.v2.StackdriverLoggingConfig();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.samplingRatio = reader.double();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a StackdriverLoggingConfig message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.tasks.v2.StackdriverLoggingConfig} StackdriverLoggingConfig
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        StackdriverLoggingConfig.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a StackdriverLoggingConfig message.
+                         * @function verify
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        StackdriverLoggingConfig.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.samplingRatio != null && message.hasOwnProperty("samplingRatio"))
+                                if (typeof message.samplingRatio !== "number")
+                                    return "samplingRatio: number expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a StackdriverLoggingConfig message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.tasks.v2.StackdriverLoggingConfig} StackdriverLoggingConfig
+                         */
+                        StackdriverLoggingConfig.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.tasks.v2.StackdriverLoggingConfig)
+                                return object;
+                            var message = new $root.google.cloud.tasks.v2.StackdriverLoggingConfig();
+                            if (object.samplingRatio != null)
+                                message.samplingRatio = Number(object.samplingRatio);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a StackdriverLoggingConfig message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @static
+                         * @param {google.cloud.tasks.v2.StackdriverLoggingConfig} message StackdriverLoggingConfig
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        StackdriverLoggingConfig.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults)
+                                object.samplingRatio = 0;
+                            if (message.samplingRatio != null && message.hasOwnProperty("samplingRatio"))
+                                object.samplingRatio = options.json && !isFinite(message.samplingRatio) ? String(message.samplingRatio) : message.samplingRatio;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this StackdriverLoggingConfig to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.tasks.v2.StackdriverLoggingConfig
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        StackdriverLoggingConfig.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return StackdriverLoggingConfig;
                     })();
     
                     v2.HttpRequest = (function() {
@@ -23671,6 +23899,8 @@
                  * @property {Array.<string>|null} [pattern] ResourceDescriptor pattern
                  * @property {string|null} [nameField] ResourceDescriptor nameField
                  * @property {google.api.ResourceDescriptor.History|null} [history] ResourceDescriptor history
+                 * @property {string|null} [plural] ResourceDescriptor plural
+                 * @property {string|null} [singular] ResourceDescriptor singular
                  */
     
                 /**
@@ -23722,6 +23952,22 @@
                 ResourceDescriptor.prototype.history = 0;
     
                 /**
+                 * ResourceDescriptor plural.
+                 * @member {string} plural
+                 * @memberof google.api.ResourceDescriptor
+                 * @instance
+                 */
+                ResourceDescriptor.prototype.plural = "";
+    
+                /**
+                 * ResourceDescriptor singular.
+                 * @member {string} singular
+                 * @memberof google.api.ResourceDescriptor
+                 * @instance
+                 */
+                ResourceDescriptor.prototype.singular = "";
+    
+                /**
                  * Creates a new ResourceDescriptor instance using the specified properties.
                  * @function create
                  * @memberof google.api.ResourceDescriptor
@@ -23754,6 +24000,10 @@
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.nameField);
                     if (message.history != null && message.hasOwnProperty("history"))
                         writer.uint32(/* id 4, wireType 0 =*/32).int32(message.history);
+                    if (message.plural != null && message.hasOwnProperty("plural"))
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.plural);
+                    if (message.singular != null && message.hasOwnProperty("singular"))
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.singular);
                     return writer;
                 };
     
@@ -23801,6 +24051,12 @@
                             break;
                         case 4:
                             message.history = reader.int32();
+                            break;
+                        case 5:
+                            message.plural = reader.string();
+                            break;
+                        case 6:
+                            message.singular = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -23859,6 +24115,12 @@
                         case 2:
                             break;
                         }
+                    if (message.plural != null && message.hasOwnProperty("plural"))
+                        if (!$util.isString(message.plural))
+                            return "plural: string expected";
+                    if (message.singular != null && message.hasOwnProperty("singular"))
+                        if (!$util.isString(message.singular))
+                            return "singular: string expected";
                     return null;
                 };
     
@@ -23899,6 +24161,10 @@
                         message.history = 2;
                         break;
                     }
+                    if (object.plural != null)
+                        message.plural = String(object.plural);
+                    if (object.singular != null)
+                        message.singular = String(object.singular);
                     return message;
                 };
     
@@ -23921,6 +24187,8 @@
                         object.type = "";
                         object.nameField = "";
                         object.history = options.enums === String ? "HISTORY_UNSPECIFIED" : 0;
+                        object.plural = "";
+                        object.singular = "";
                     }
                     if (message.type != null && message.hasOwnProperty("type"))
                         object.type = message.type;
@@ -23933,6 +24201,10 @@
                         object.nameField = message.nameField;
                     if (message.history != null && message.hasOwnProperty("history"))
                         object.history = options.enums === String ? $root.google.api.ResourceDescriptor.History[message.history] : message.history;
+                    if (message.plural != null && message.hasOwnProperty("plural"))
+                        object.plural = message.plural;
+                    if (message.singular != null && message.hasOwnProperty("singular"))
+                        object.singular = message.singular;
                     return object;
                 };
     
@@ -28347,6 +28619,7 @@
                  * @property {string|null} [phpMetadataNamespace] FileOptions phpMetadataNamespace
                  * @property {string|null} [rubyPackage] FileOptions rubyPackage
                  * @property {Array.<google.protobuf.IUninterpretedOption>|null} [uninterpretedOption] FileOptions uninterpretedOption
+                 * @property {Array.<google.api.IResourceDescriptor>|null} [".google.api.resourceDefinition"] FileOptions .google.api.resourceDefinition
                  */
     
                 /**
@@ -28359,6 +28632,7 @@
                  */
                 function FileOptions(properties) {
                     this.uninterpretedOption = [];
+                    this[".google.api.resourceDefinition"] = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -28534,6 +28808,14 @@
                 FileOptions.prototype.uninterpretedOption = $util.emptyArray;
     
                 /**
+                 * FileOptions .google.api.resourceDefinition.
+                 * @member {Array.<google.api.IResourceDescriptor>} .google.api.resourceDefinition
+                 * @memberof google.protobuf.FileOptions
+                 * @instance
+                 */
+                FileOptions.prototype[".google.api.resourceDefinition"] = $util.emptyArray;
+    
+                /**
                  * Creates a new FileOptions instance using the specified properties.
                  * @function create
                  * @memberof google.protobuf.FileOptions
@@ -28600,6 +28882,9 @@
                     if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                         for (var i = 0; i < message.uninterpretedOption.length; ++i)
                             $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
+                    if (message[".google.api.resourceDefinition"] != null && message[".google.api.resourceDefinition"].length)
+                        for (var i = 0; i < message[".google.api.resourceDefinition"].length; ++i)
+                            $root.google.api.ResourceDescriptor.encode(message[".google.api.resourceDefinition"][i], writer.uint32(/* id 1053, wireType 2 =*/8426).fork()).ldelim();
                     return writer;
                 };
     
@@ -28698,6 +28983,11 @@
                             if (!(message.uninterpretedOption && message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
+                            break;
+                        case 1053:
+                            if (!(message[".google.api.resourceDefinition"] && message[".google.api.resourceDefinition"].length))
+                                message[".google.api.resourceDefinition"] = [];
+                            message[".google.api.resourceDefinition"].push($root.google.api.ResourceDescriptor.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -28809,6 +29099,15 @@
                                 return "uninterpretedOption." + error;
                         }
                     }
+                    if (message[".google.api.resourceDefinition"] != null && message.hasOwnProperty(".google.api.resourceDefinition")) {
+                        if (!Array.isArray(message[".google.api.resourceDefinition"]))
+                            return ".google.api.resourceDefinition: array expected";
+                        for (var i = 0; i < message[".google.api.resourceDefinition"].length; ++i) {
+                            var error = $root.google.api.ResourceDescriptor.verify(message[".google.api.resourceDefinition"][i]);
+                            if (error)
+                                return ".google.api.resourceDefinition." + error;
+                        }
+                    }
                     return null;
                 };
     
@@ -28886,6 +29185,16 @@
                             message.uninterpretedOption[i] = $root.google.protobuf.UninterpretedOption.fromObject(object.uninterpretedOption[i]);
                         }
                     }
+                    if (object[".google.api.resourceDefinition"]) {
+                        if (!Array.isArray(object[".google.api.resourceDefinition"]))
+                            throw TypeError(".google.protobuf.FileOptions..google.api.resourceDefinition: array expected");
+                        message[".google.api.resourceDefinition"] = [];
+                        for (var i = 0; i < object[".google.api.resourceDefinition"].length; ++i) {
+                            if (typeof object[".google.api.resourceDefinition"][i] !== "object")
+                                throw TypeError(".google.protobuf.FileOptions..google.api.resourceDefinition: object expected");
+                            message[".google.api.resourceDefinition"][i] = $root.google.api.ResourceDescriptor.fromObject(object[".google.api.resourceDefinition"][i]);
+                        }
+                    }
                     return message;
                 };
     
@@ -28902,8 +29211,10 @@
                     if (!options)
                         options = {};
                     var object = {};
-                    if (options.arrays || options.defaults)
+                    if (options.arrays || options.defaults) {
                         object.uninterpretedOption = [];
+                        object[".google.api.resourceDefinition"] = [];
+                    }
                     if (options.defaults) {
                         object.javaPackage = "";
                         object.javaOuterClassname = "";
@@ -28970,6 +29281,11 @@
                         object.uninterpretedOption = [];
                         for (var j = 0; j < message.uninterpretedOption.length; ++j)
                             object.uninterpretedOption[j] = $root.google.protobuf.UninterpretedOption.toObject(message.uninterpretedOption[j], options);
+                    }
+                    if (message[".google.api.resourceDefinition"] && message[".google.api.resourceDefinition"].length) {
+                        object[".google.api.resourceDefinition"] = [];
+                        for (var j = 0; j < message[".google.api.resourceDefinition"].length; ++j)
+                            object[".google.api.resourceDefinition"][j] = $root.google.api.ResourceDescriptor.toObject(message[".google.api.resourceDefinition"][j], options);
                     }
                     return object;
                 };

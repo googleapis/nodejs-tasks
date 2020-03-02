@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -1239,7 +1239,7 @@ export namespace google {
                     parent?: (string|null);
 
                     /** ListTasksRequest responseView */
-                    responseView?: (google.cloud.tasks.v2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View|null);
 
                     /** ListTasksRequest pageSize */
                     pageSize?: (number|null);
@@ -1261,7 +1261,7 @@ export namespace google {
                     public parent: string;
 
                     /** ListTasksRequest responseView. */
-                    public responseView: google.cloud.tasks.v2.Task.View;
+                    public responseView: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View);
 
                     /** ListTasksRequest pageSize. */
                     public pageSize: number;
@@ -1443,7 +1443,7 @@ export namespace google {
                     name?: (string|null);
 
                     /** GetTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View|null);
                 }
 
                 /** Represents a GetTaskRequest. */
@@ -1459,7 +1459,7 @@ export namespace google {
                     public name: string;
 
                     /** GetTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2.Task.View;
+                    public responseView: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View);
 
                     /**
                      * Creates a new GetTaskRequest instance using the specified properties.
@@ -1542,7 +1542,7 @@ export namespace google {
                     task?: (google.cloud.tasks.v2.ITask|null);
 
                     /** CreateTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View|null);
                 }
 
                 /** Represents a CreateTaskRequest. */
@@ -1561,7 +1561,7 @@ export namespace google {
                     public task?: (google.cloud.tasks.v2.ITask|null);
 
                     /** CreateTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2.Task.View;
+                    public responseView: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View);
 
                     /**
                      * Creates a new CreateTaskRequest instance using the specified properties.
@@ -1731,7 +1731,7 @@ export namespace google {
                     name?: (string|null);
 
                     /** RunTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View|null);
                 }
 
                 /** Represents a RunTaskRequest. */
@@ -1747,7 +1747,7 @@ export namespace google {
                     public name: string;
 
                     /** RunTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2.Task.View;
+                    public responseView: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View);
 
                     /**
                      * Creates a new RunTaskRequest instance using the specified properties.
@@ -1836,10 +1836,13 @@ export namespace google {
                     retryConfig?: (google.cloud.tasks.v2.IRetryConfig|null);
 
                     /** Queue state */
-                    state?: (google.cloud.tasks.v2.Queue.State|null);
+                    state?: (google.cloud.tasks.v2.Queue.State|keyof typeof google.cloud.tasks.v2.Queue.State|null);
 
                     /** Queue purgeTime */
                     purgeTime?: (google.protobuf.ITimestamp|null);
+
+                    /** Queue stackdriverLoggingConfig */
+                    stackdriverLoggingConfig?: (google.cloud.tasks.v2.IStackdriverLoggingConfig|null);
                 }
 
                 /** Represents a Queue. */
@@ -1864,10 +1867,13 @@ export namespace google {
                     public retryConfig?: (google.cloud.tasks.v2.IRetryConfig|null);
 
                     /** Queue state. */
-                    public state: google.cloud.tasks.v2.Queue.State;
+                    public state: (google.cloud.tasks.v2.Queue.State|keyof typeof google.cloud.tasks.v2.Queue.State);
 
                     /** Queue purgeTime. */
                     public purgeTime?: (google.protobuf.ITimestamp|null);
+
+                    /** Queue stackdriverLoggingConfig. */
+                    public stackdriverLoggingConfig?: (google.cloud.tasks.v2.IStackdriverLoggingConfig|null);
 
                     /**
                      * Creates a new Queue instance using the specified properties.
@@ -2167,6 +2173,96 @@ export namespace google {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a StackdriverLoggingConfig. */
+                interface IStackdriverLoggingConfig {
+
+                    /** StackdriverLoggingConfig samplingRatio */
+                    samplingRatio?: (number|null);
+                }
+
+                /** Represents a StackdriverLoggingConfig. */
+                class StackdriverLoggingConfig implements IStackdriverLoggingConfig {
+
+                    /**
+                     * Constructs a new StackdriverLoggingConfig.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.tasks.v2.IStackdriverLoggingConfig);
+
+                    /** StackdriverLoggingConfig samplingRatio. */
+                    public samplingRatio: number;
+
+                    /**
+                     * Creates a new StackdriverLoggingConfig instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns StackdriverLoggingConfig instance
+                     */
+                    public static create(properties?: google.cloud.tasks.v2.IStackdriverLoggingConfig): google.cloud.tasks.v2.StackdriverLoggingConfig;
+
+                    /**
+                     * Encodes the specified StackdriverLoggingConfig message. Does not implicitly {@link google.cloud.tasks.v2.StackdriverLoggingConfig.verify|verify} messages.
+                     * @param message StackdriverLoggingConfig message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.tasks.v2.IStackdriverLoggingConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified StackdriverLoggingConfig message, length delimited. Does not implicitly {@link google.cloud.tasks.v2.StackdriverLoggingConfig.verify|verify} messages.
+                     * @param message StackdriverLoggingConfig message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.tasks.v2.IStackdriverLoggingConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a StackdriverLoggingConfig message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns StackdriverLoggingConfig
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.tasks.v2.StackdriverLoggingConfig;
+
+                    /**
+                     * Decodes a StackdriverLoggingConfig message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns StackdriverLoggingConfig
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.tasks.v2.StackdriverLoggingConfig;
+
+                    /**
+                     * Verifies a StackdriverLoggingConfig message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a StackdriverLoggingConfig message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns StackdriverLoggingConfig
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.tasks.v2.StackdriverLoggingConfig;
+
+                    /**
+                     * Creates a plain object from a StackdriverLoggingConfig message. Also converts values to other types if specified.
+                     * @param message StackdriverLoggingConfig
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.tasks.v2.StackdriverLoggingConfig, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this StackdriverLoggingConfig to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a HttpRequest. */
                 interface IHttpRequest {
 
@@ -2174,13 +2270,13 @@ export namespace google {
                     url?: (string|null);
 
                     /** HttpRequest httpMethod */
-                    httpMethod?: (google.cloud.tasks.v2.HttpMethod|null);
+                    httpMethod?: (google.cloud.tasks.v2.HttpMethod|keyof typeof google.cloud.tasks.v2.HttpMethod|null);
 
                     /** HttpRequest headers */
                     headers?: ({ [k: string]: string }|null);
 
                     /** HttpRequest body */
-                    body?: (Uint8Array|null);
+                    body?: (Uint8Array|string|null);
 
                     /** HttpRequest oauthToken */
                     oauthToken?: (google.cloud.tasks.v2.IOAuthToken|null);
@@ -2202,13 +2298,13 @@ export namespace google {
                     public url: string;
 
                     /** HttpRequest httpMethod. */
-                    public httpMethod: google.cloud.tasks.v2.HttpMethod;
+                    public httpMethod: (google.cloud.tasks.v2.HttpMethod|keyof typeof google.cloud.tasks.v2.HttpMethod);
 
                     /** HttpRequest headers. */
                     public headers: { [k: string]: string };
 
                     /** HttpRequest body. */
-                    public body: Uint8Array;
+                    public body: (Uint8Array|string);
 
                     /** HttpRequest oauthToken. */
                     public oauthToken?: (google.cloud.tasks.v2.IOAuthToken|null);
@@ -2294,7 +2390,7 @@ export namespace google {
                 interface IAppEngineHttpRequest {
 
                     /** AppEngineHttpRequest httpMethod */
-                    httpMethod?: (google.cloud.tasks.v2.HttpMethod|null);
+                    httpMethod?: (google.cloud.tasks.v2.HttpMethod|keyof typeof google.cloud.tasks.v2.HttpMethod|null);
 
                     /** AppEngineHttpRequest appEngineRouting */
                     appEngineRouting?: (google.cloud.tasks.v2.IAppEngineRouting|null);
@@ -2306,7 +2402,7 @@ export namespace google {
                     headers?: ({ [k: string]: string }|null);
 
                     /** AppEngineHttpRequest body */
-                    body?: (Uint8Array|null);
+                    body?: (Uint8Array|string|null);
                 }
 
                 /** Represents an AppEngineHttpRequest. */
@@ -2319,7 +2415,7 @@ export namespace google {
                     constructor(properties?: google.cloud.tasks.v2.IAppEngineHttpRequest);
 
                     /** AppEngineHttpRequest httpMethod. */
-                    public httpMethod: google.cloud.tasks.v2.HttpMethod;
+                    public httpMethod: (google.cloud.tasks.v2.HttpMethod|keyof typeof google.cloud.tasks.v2.HttpMethod);
 
                     /** AppEngineHttpRequest appEngineRouting. */
                     public appEngineRouting?: (google.cloud.tasks.v2.IAppEngineRouting|null);
@@ -2331,7 +2427,7 @@ export namespace google {
                     public headers: { [k: string]: string };
 
                     /** AppEngineHttpRequest body. */
-                    public body: Uint8Array;
+                    public body: (Uint8Array|string);
 
                     /**
                      * Creates a new AppEngineHttpRequest instance using the specified properties.
@@ -2750,7 +2846,7 @@ export namespace google {
                     lastAttempt?: (google.cloud.tasks.v2.IAttempt|null);
 
                     /** Task view */
-                    view?: (google.cloud.tasks.v2.Task.View|null);
+                    view?: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View|null);
                 }
 
                 /** Represents a Task. */
@@ -2793,7 +2889,7 @@ export namespace google {
                     public lastAttempt?: (google.cloud.tasks.v2.IAttempt|null);
 
                     /** Task view. */
-                    public view: google.cloud.tasks.v2.Task.View;
+                    public view: (google.cloud.tasks.v2.Task.View|keyof typeof google.cloud.tasks.v2.Task.View);
 
                     /** Task messageType. */
                     public messageType?: ("appEngineHttpRequest"|"httpRequest");
@@ -4288,7 +4384,7 @@ export namespace google {
                     parent?: (string|null);
 
                     /** ListTasksRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View|null);
 
                     /** ListTasksRequest pageSize */
                     pageSize?: (number|null);
@@ -4310,7 +4406,7 @@ export namespace google {
                     public parent: string;
 
                     /** ListTasksRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta2.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View);
 
                     /** ListTasksRequest pageSize. */
                     public pageSize: number;
@@ -4492,7 +4588,7 @@ export namespace google {
                     name?: (string|null);
 
                     /** GetTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View|null);
                 }
 
                 /** Represents a GetTaskRequest. */
@@ -4508,7 +4604,7 @@ export namespace google {
                     public name: string;
 
                     /** GetTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta2.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View);
 
                     /**
                      * Creates a new GetTaskRequest instance using the specified properties.
@@ -4591,7 +4687,7 @@ export namespace google {
                     task?: (google.cloud.tasks.v2beta2.ITask|null);
 
                     /** CreateTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View|null);
                 }
 
                 /** Represents a CreateTaskRequest. */
@@ -4610,7 +4706,7 @@ export namespace google {
                     public task?: (google.cloud.tasks.v2beta2.ITask|null);
 
                     /** CreateTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta2.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View);
 
                     /**
                      * Creates a new CreateTaskRequest instance using the specified properties.
@@ -4786,7 +4882,7 @@ export namespace google {
                     leaseDuration?: (google.protobuf.IDuration|null);
 
                     /** LeaseTasksRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View|null);
 
                     /** LeaseTasksRequest filter */
                     filter?: (string|null);
@@ -4811,7 +4907,7 @@ export namespace google {
                     public leaseDuration?: (google.protobuf.IDuration|null);
 
                     /** LeaseTasksRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta2.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View);
 
                     /** LeaseTasksRequest filter. */
                     public filter: string;
@@ -5086,7 +5182,7 @@ export namespace google {
                     leaseDuration?: (google.protobuf.IDuration|null);
 
                     /** RenewLeaseRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View|null);
                 }
 
                 /** Represents a RenewLeaseRequest. */
@@ -5108,7 +5204,7 @@ export namespace google {
                     public leaseDuration?: (google.protobuf.IDuration|null);
 
                     /** RenewLeaseRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta2.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View);
 
                     /**
                      * Creates a new RenewLeaseRequest instance using the specified properties.
@@ -5191,7 +5287,7 @@ export namespace google {
                     scheduleTime?: (google.protobuf.ITimestamp|null);
 
                     /** CancelLeaseRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View|null);
                 }
 
                 /** Represents a CancelLeaseRequest. */
@@ -5210,7 +5306,7 @@ export namespace google {
                     public scheduleTime?: (google.protobuf.ITimestamp|null);
 
                     /** CancelLeaseRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta2.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View);
 
                     /**
                      * Creates a new CancelLeaseRequest instance using the specified properties.
@@ -5290,7 +5386,7 @@ export namespace google {
                     name?: (string|null);
 
                     /** RunTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta2.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View|null);
                 }
 
                 /** Represents a RunTaskRequest. */
@@ -5306,7 +5402,7 @@ export namespace google {
                     public name: string;
 
                     /** RunTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta2.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View);
 
                     /**
                      * Creates a new RunTaskRequest instance using the specified properties.
@@ -5398,7 +5494,7 @@ export namespace google {
                     retryConfig?: (google.cloud.tasks.v2beta2.IRetryConfig|null);
 
                     /** Queue state */
-                    state?: (google.cloud.tasks.v2beta2.Queue.State|null);
+                    state?: (google.cloud.tasks.v2beta2.Queue.State|keyof typeof google.cloud.tasks.v2beta2.Queue.State|null);
 
                     /** Queue purgeTime */
                     purgeTime?: (google.protobuf.ITimestamp|null);
@@ -5429,7 +5525,7 @@ export namespace google {
                     public retryConfig?: (google.cloud.tasks.v2beta2.IRetryConfig|null);
 
                     /** Queue state. */
-                    public state: google.cloud.tasks.v2beta2.Queue.State;
+                    public state: (google.cloud.tasks.v2beta2.Queue.State|keyof typeof google.cloud.tasks.v2beta2.Queue.State);
 
                     /** Queue purgeTime. */
                     public purgeTime?: (google.protobuf.ITimestamp|null);
@@ -5832,7 +5928,7 @@ export namespace google {
                 interface IPullMessage {
 
                     /** PullMessage payload */
-                    payload?: (Uint8Array|null);
+                    payload?: (Uint8Array|string|null);
 
                     /** PullMessage tag */
                     tag?: (string|null);
@@ -5848,7 +5944,7 @@ export namespace google {
                     constructor(properties?: google.cloud.tasks.v2beta2.IPullMessage);
 
                     /** PullMessage payload. */
-                    public payload: Uint8Array;
+                    public payload: (Uint8Array|string);
 
                     /** PullMessage tag. */
                     public tag: string;
@@ -6018,7 +6114,7 @@ export namespace google {
                 interface IAppEngineHttpRequest {
 
                     /** AppEngineHttpRequest httpMethod */
-                    httpMethod?: (google.cloud.tasks.v2beta2.HttpMethod|null);
+                    httpMethod?: (google.cloud.tasks.v2beta2.HttpMethod|keyof typeof google.cloud.tasks.v2beta2.HttpMethod|null);
 
                     /** AppEngineHttpRequest appEngineRouting */
                     appEngineRouting?: (google.cloud.tasks.v2beta2.IAppEngineRouting|null);
@@ -6030,7 +6126,7 @@ export namespace google {
                     headers?: ({ [k: string]: string }|null);
 
                     /** AppEngineHttpRequest payload */
-                    payload?: (Uint8Array|null);
+                    payload?: (Uint8Array|string|null);
                 }
 
                 /** Represents an AppEngineHttpRequest. */
@@ -6043,7 +6139,7 @@ export namespace google {
                     constructor(properties?: google.cloud.tasks.v2beta2.IAppEngineHttpRequest);
 
                     /** AppEngineHttpRequest httpMethod. */
-                    public httpMethod: google.cloud.tasks.v2beta2.HttpMethod;
+                    public httpMethod: (google.cloud.tasks.v2beta2.HttpMethod|keyof typeof google.cloud.tasks.v2beta2.HttpMethod);
 
                     /** AppEngineHttpRequest appEngineRouting. */
                     public appEngineRouting?: (google.cloud.tasks.v2beta2.IAppEngineRouting|null);
@@ -6055,7 +6151,7 @@ export namespace google {
                     public headers: { [k: string]: string };
 
                     /** AppEngineHttpRequest payload. */
-                    public payload: Uint8Array;
+                    public payload: (Uint8Array|string);
 
                     /**
                      * Creates a new AppEngineHttpRequest instance using the specified properties.
@@ -6268,7 +6364,7 @@ export namespace google {
                     status?: (google.cloud.tasks.v2beta2.ITaskStatus|null);
 
                     /** Task view */
-                    view?: (google.cloud.tasks.v2beta2.Task.View|null);
+                    view?: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View|null);
                 }
 
                 /** Represents a Task. */
@@ -6299,7 +6395,7 @@ export namespace google {
                     public status?: (google.cloud.tasks.v2beta2.ITaskStatus|null);
 
                     /** Task view. */
-                    public view: google.cloud.tasks.v2beta2.Task.View;
+                    public view: (google.cloud.tasks.v2beta2.Task.View|keyof typeof google.cloud.tasks.v2beta2.Task.View);
 
                     /** Task payloadType. */
                     public payloadType?: ("appEngineHttpRequest"|"pullMessage");
@@ -7818,7 +7914,7 @@ export namespace google {
                     parent?: (string|null);
 
                     /** ListTasksRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta3.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View|null);
 
                     /** ListTasksRequest pageSize */
                     pageSize?: (number|null);
@@ -7840,7 +7936,7 @@ export namespace google {
                     public parent: string;
 
                     /** ListTasksRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta3.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View);
 
                     /** ListTasksRequest pageSize. */
                     public pageSize: number;
@@ -8022,7 +8118,7 @@ export namespace google {
                     name?: (string|null);
 
                     /** GetTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta3.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View|null);
                 }
 
                 /** Represents a GetTaskRequest. */
@@ -8038,7 +8134,7 @@ export namespace google {
                     public name: string;
 
                     /** GetTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta3.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View);
 
                     /**
                      * Creates a new GetTaskRequest instance using the specified properties.
@@ -8121,7 +8217,7 @@ export namespace google {
                     task?: (google.cloud.tasks.v2beta3.ITask|null);
 
                     /** CreateTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta3.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View|null);
                 }
 
                 /** Represents a CreateTaskRequest. */
@@ -8140,7 +8236,7 @@ export namespace google {
                     public task?: (google.cloud.tasks.v2beta3.ITask|null);
 
                     /** CreateTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta3.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View);
 
                     /**
                      * Creates a new CreateTaskRequest instance using the specified properties.
@@ -8310,7 +8406,7 @@ export namespace google {
                     name?: (string|null);
 
                     /** RunTaskRequest responseView */
-                    responseView?: (google.cloud.tasks.v2beta3.Task.View|null);
+                    responseView?: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View|null);
                 }
 
                 /** Represents a RunTaskRequest. */
@@ -8326,7 +8422,7 @@ export namespace google {
                     public name: string;
 
                     /** RunTaskRequest responseView. */
-                    public responseView: google.cloud.tasks.v2beta3.Task.View;
+                    public responseView: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View);
 
                     /**
                      * Creates a new RunTaskRequest instance using the specified properties.
@@ -8415,7 +8511,7 @@ export namespace google {
                     retryConfig?: (google.cloud.tasks.v2beta3.IRetryConfig|null);
 
                     /** Queue state */
-                    state?: (google.cloud.tasks.v2beta3.Queue.State|null);
+                    state?: (google.cloud.tasks.v2beta3.Queue.State|keyof typeof google.cloud.tasks.v2beta3.Queue.State|null);
 
                     /** Queue purgeTime */
                     purgeTime?: (google.protobuf.ITimestamp|null);
@@ -8446,7 +8542,7 @@ export namespace google {
                     public retryConfig?: (google.cloud.tasks.v2beta3.IRetryConfig|null);
 
                     /** Queue state. */
-                    public state: google.cloud.tasks.v2beta3.Queue.State;
+                    public state: (google.cloud.tasks.v2beta3.Queue.State|keyof typeof google.cloud.tasks.v2beta3.Queue.State);
 
                     /** Queue purgeTime. */
                     public purgeTime?: (google.protobuf.ITimestamp|null);
@@ -8852,13 +8948,13 @@ export namespace google {
                     url?: (string|null);
 
                     /** HttpRequest httpMethod */
-                    httpMethod?: (google.cloud.tasks.v2beta3.HttpMethod|null);
+                    httpMethod?: (google.cloud.tasks.v2beta3.HttpMethod|keyof typeof google.cloud.tasks.v2beta3.HttpMethod|null);
 
                     /** HttpRequest headers */
                     headers?: ({ [k: string]: string }|null);
 
                     /** HttpRequest body */
-                    body?: (Uint8Array|null);
+                    body?: (Uint8Array|string|null);
 
                     /** HttpRequest oauthToken */
                     oauthToken?: (google.cloud.tasks.v2beta3.IOAuthToken|null);
@@ -8880,13 +8976,13 @@ export namespace google {
                     public url: string;
 
                     /** HttpRequest httpMethod. */
-                    public httpMethod: google.cloud.tasks.v2beta3.HttpMethod;
+                    public httpMethod: (google.cloud.tasks.v2beta3.HttpMethod|keyof typeof google.cloud.tasks.v2beta3.HttpMethod);
 
                     /** HttpRequest headers. */
                     public headers: { [k: string]: string };
 
                     /** HttpRequest body. */
-                    public body: Uint8Array;
+                    public body: (Uint8Array|string);
 
                     /** HttpRequest oauthToken. */
                     public oauthToken?: (google.cloud.tasks.v2beta3.IOAuthToken|null);
@@ -9062,7 +9158,7 @@ export namespace google {
                 interface IAppEngineHttpRequest {
 
                     /** AppEngineHttpRequest httpMethod */
-                    httpMethod?: (google.cloud.tasks.v2beta3.HttpMethod|null);
+                    httpMethod?: (google.cloud.tasks.v2beta3.HttpMethod|keyof typeof google.cloud.tasks.v2beta3.HttpMethod|null);
 
                     /** AppEngineHttpRequest appEngineRouting */
                     appEngineRouting?: (google.cloud.tasks.v2beta3.IAppEngineRouting|null);
@@ -9074,7 +9170,7 @@ export namespace google {
                     headers?: ({ [k: string]: string }|null);
 
                     /** AppEngineHttpRequest body */
-                    body?: (Uint8Array|null);
+                    body?: (Uint8Array|string|null);
                 }
 
                 /** Represents an AppEngineHttpRequest. */
@@ -9087,7 +9183,7 @@ export namespace google {
                     constructor(properties?: google.cloud.tasks.v2beta3.IAppEngineHttpRequest);
 
                     /** AppEngineHttpRequest httpMethod. */
-                    public httpMethod: google.cloud.tasks.v2beta3.HttpMethod;
+                    public httpMethod: (google.cloud.tasks.v2beta3.HttpMethod|keyof typeof google.cloud.tasks.v2beta3.HttpMethod);
 
                     /** AppEngineHttpRequest appEngineRouting. */
                     public appEngineRouting?: (google.cloud.tasks.v2beta3.IAppEngineRouting|null);
@@ -9099,7 +9195,7 @@ export namespace google {
                     public headers: { [k: string]: string };
 
                     /** AppEngineHttpRequest body. */
-                    public body: Uint8Array;
+                    public body: (Uint8Array|string);
 
                     /**
                      * Creates a new AppEngineHttpRequest instance using the specified properties.
@@ -9518,7 +9614,7 @@ export namespace google {
                     lastAttempt?: (google.cloud.tasks.v2beta3.IAttempt|null);
 
                     /** Task view */
-                    view?: (google.cloud.tasks.v2beta3.Task.View|null);
+                    view?: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View|null);
                 }
 
                 /** Represents a Task. */
@@ -9561,7 +9657,7 @@ export namespace google {
                     public lastAttempt?: (google.cloud.tasks.v2beta3.IAttempt|null);
 
                     /** Task view. */
-                    public view: google.cloud.tasks.v2beta3.Task.View;
+                    public view: (google.cloud.tasks.v2beta3.Task.View|keyof typeof google.cloud.tasks.v2beta3.Task.View);
 
                     /** Task payloadType. */
                     public payloadType?: ("appEngineHttpRequest"|"httpRequest");
@@ -10123,7 +10219,13 @@ export namespace google {
             nameField?: (string|null);
 
             /** ResourceDescriptor history */
-            history?: (google.api.ResourceDescriptor.History|null);
+            history?: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History|null);
+
+            /** ResourceDescriptor plural */
+            plural?: (string|null);
+
+            /** ResourceDescriptor singular */
+            singular?: (string|null);
         }
 
         /** Represents a ResourceDescriptor. */
@@ -10145,7 +10247,13 @@ export namespace google {
             public nameField: string;
 
             /** ResourceDescriptor history. */
-            public history: google.api.ResourceDescriptor.History;
+            public history: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History);
+
+            /** ResourceDescriptor plural. */
+            public plural: string;
+
+            /** ResourceDescriptor singular. */
+            public singular: string;
 
             /**
              * Creates a new ResourceDescriptor instance using the specified properties.
@@ -11019,10 +11127,10 @@ export namespace google {
             number?: (number|null);
 
             /** FieldDescriptorProto label */
-            label?: (google.protobuf.FieldDescriptorProto.Label|null);
+            label?: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label|null);
 
             /** FieldDescriptorProto type */
-            type?: (google.protobuf.FieldDescriptorProto.Type|null);
+            type?: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type|null);
 
             /** FieldDescriptorProto typeName */
             typeName?: (string|null);
@@ -11059,10 +11167,10 @@ export namespace google {
             public number: number;
 
             /** FieldDescriptorProto label. */
-            public label: google.protobuf.FieldDescriptorProto.Label;
+            public label: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label);
 
             /** FieldDescriptorProto type. */
-            public type: google.protobuf.FieldDescriptorProto.Type;
+            public type: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type);
 
             /** FieldDescriptorProto typeName. */
             public typeName: string;
@@ -11837,7 +11945,7 @@ export namespace google {
             javaStringCheckUtf8?: (boolean|null);
 
             /** FileOptions optimizeFor */
-            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|null);
+            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode|null);
 
             /** FileOptions goPackage */
             goPackage?: (string|null);
@@ -11883,6 +11991,9 @@ export namespace google {
 
             /** FileOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
+
+            /** FileOptions .google.api.resourceDefinition */
+            ".google.api.resourceDefinition"?: (google.api.IResourceDescriptor[]|null);
         }
 
         /** Represents a FileOptions. */
@@ -11910,7 +12021,7 @@ export namespace google {
             public javaStringCheckUtf8: boolean;
 
             /** FileOptions optimizeFor. */
-            public optimizeFor: google.protobuf.FileOptions.OptimizeMode;
+            public optimizeFor: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode);
 
             /** FileOptions goPackage. */
             public goPackage: string;
@@ -12159,13 +12270,13 @@ export namespace google {
         interface IFieldOptions {
 
             /** FieldOptions ctype */
-            ctype?: (google.protobuf.FieldOptions.CType|null);
+            ctype?: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType|null);
 
             /** FieldOptions packed */
             packed?: (boolean|null);
 
             /** FieldOptions jstype */
-            jstype?: (google.protobuf.FieldOptions.JSType|null);
+            jstype?: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType|null);
 
             /** FieldOptions lazy */
             lazy?: (boolean|null);
@@ -12196,13 +12307,13 @@ export namespace google {
             constructor(properties?: google.protobuf.IFieldOptions);
 
             /** FieldOptions ctype. */
-            public ctype: google.protobuf.FieldOptions.CType;
+            public ctype: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType);
 
             /** FieldOptions packed. */
             public packed: boolean;
 
             /** FieldOptions jstype. */
-            public jstype: google.protobuf.FieldOptions.JSType;
+            public jstype: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType);
 
             /** FieldOptions lazy. */
             public lazy: boolean;
@@ -12701,7 +12812,7 @@ export namespace google {
             deprecated?: (boolean|null);
 
             /** MethodOptions idempotencyLevel */
-            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|null);
+            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel|null);
 
             /** MethodOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
@@ -12726,7 +12837,7 @@ export namespace google {
             public deprecated: boolean;
 
             /** MethodOptions idempotencyLevel. */
-            public idempotencyLevel: google.protobuf.MethodOptions.IdempotencyLevel;
+            public idempotencyLevel: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel);
 
             /** MethodOptions uninterpretedOption. */
             public uninterpretedOption: google.protobuf.IUninterpretedOption[];
@@ -12822,16 +12933,16 @@ export namespace google {
             identifierValue?: (string|null);
 
             /** UninterpretedOption positiveIntValue */
-            positiveIntValue?: (number|Long|null);
+            positiveIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption negativeIntValue */
-            negativeIntValue?: (number|Long|null);
+            negativeIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption doubleValue */
             doubleValue?: (number|null);
 
             /** UninterpretedOption stringValue */
-            stringValue?: (Uint8Array|null);
+            stringValue?: (Uint8Array|string|null);
 
             /** UninterpretedOption aggregateValue */
             aggregateValue?: (string|null);
@@ -12853,16 +12964,16 @@ export namespace google {
             public identifierValue: string;
 
             /** UninterpretedOption positiveIntValue. */
-            public positiveIntValue: (number|Long);
+            public positiveIntValue: (number|Long|string);
 
             /** UninterpretedOption negativeIntValue. */
-            public negativeIntValue: (number|Long);
+            public negativeIntValue: (number|Long|string);
 
             /** UninterpretedOption doubleValue. */
             public doubleValue: number;
 
             /** UninterpretedOption stringValue. */
-            public stringValue: Uint8Array;
+            public stringValue: (Uint8Array|string);
 
             /** UninterpretedOption aggregateValue. */
             public aggregateValue: string;
@@ -13449,7 +13560,7 @@ export namespace google {
         interface IDuration {
 
             /** Duration seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|Long|string|null);
 
             /** Duration nanos */
             nanos?: (number|null);
@@ -13465,7 +13576,7 @@ export namespace google {
             constructor(properties?: google.protobuf.IDuration);
 
             /** Duration seconds. */
-            public seconds: (number|Long);
+            public seconds: (number|Long|string);
 
             /** Duration nanos. */
             public nanos: number;
@@ -13545,7 +13656,7 @@ export namespace google {
         interface ITimestamp {
 
             /** Timestamp seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|Long|string|null);
 
             /** Timestamp nanos */
             nanos?: (number|null);
@@ -13561,7 +13672,7 @@ export namespace google {
             constructor(properties?: google.protobuf.ITimestamp);
 
             /** Timestamp seconds. */
-            public seconds: (number|Long);
+            public seconds: (number|Long|string);
 
             /** Timestamp nanos. */
             public nanos: number;
@@ -13644,7 +13755,7 @@ export namespace google {
             type_url?: (string|null);
 
             /** Any value */
-            value?: (Uint8Array|null);
+            value?: (Uint8Array|string|null);
         }
 
         /** Represents an Any. */
@@ -13660,7 +13771,7 @@ export namespace google {
             public type_url: string;
 
             /** Any value. */
-            public value: Uint8Array;
+            public value: (Uint8Array|string);
 
             /**
              * Creates a new Any instance using the specified properties.
@@ -14585,7 +14696,7 @@ export namespace google {
                 bindings?: (google.iam.v1.IBinding[]|null);
 
                 /** Policy etag */
-                etag?: (Uint8Array|null);
+                etag?: (Uint8Array|string|null);
             }
 
             /** Represents a Policy. */
@@ -14604,7 +14715,7 @@ export namespace google {
                 public bindings: google.iam.v1.IBinding[];
 
                 /** Policy etag. */
-                public etag: Uint8Array;
+                public etag: (Uint8Array|string);
 
                 /**
                  * Creates a new Policy instance using the specified properties.
@@ -14879,7 +14990,7 @@ export namespace google {
             interface IBindingDelta {
 
                 /** BindingDelta action */
-                action?: (google.iam.v1.BindingDelta.Action|null);
+                action?: (google.iam.v1.BindingDelta.Action|keyof typeof google.iam.v1.BindingDelta.Action|null);
 
                 /** BindingDelta role */
                 role?: (string|null);
@@ -14901,7 +15012,7 @@ export namespace google {
                 constructor(properties?: google.iam.v1.IBindingDelta);
 
                 /** BindingDelta action. */
-                public action: google.iam.v1.BindingDelta.Action;
+                public action: (google.iam.v1.BindingDelta.Action|keyof typeof google.iam.v1.BindingDelta.Action);
 
                 /** BindingDelta role. */
                 public role: string;
@@ -14997,7 +15108,7 @@ export namespace google {
             interface IAuditConfigDelta {
 
                 /** AuditConfigDelta action */
-                action?: (google.iam.v1.AuditConfigDelta.Action|null);
+                action?: (google.iam.v1.AuditConfigDelta.Action|keyof typeof google.iam.v1.AuditConfigDelta.Action|null);
 
                 /** AuditConfigDelta service */
                 service?: (string|null);
@@ -15019,7 +15130,7 @@ export namespace google {
                 constructor(properties?: google.iam.v1.IAuditConfigDelta);
 
                 /** AuditConfigDelta action. */
-                public action: google.iam.v1.AuditConfigDelta.Action;
+                public action: (google.iam.v1.AuditConfigDelta.Action|keyof typeof google.iam.v1.AuditConfigDelta.Action);
 
                 /** AuditConfigDelta service. */
                 public service: string;
