@@ -1,6 +1,12 @@
 {
-  "updateTime": "2020-04-03T12:16:51.870175Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/nodejs-tasks.git",
+        "sha": "5b8c80d32f7c081887da203b833a2ee38ae69c38"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
