@@ -31,8 +31,8 @@ for version in versions:
         "tasks", version,
         generator_args={
             "grpc-service-config": f"google/cloud/tasks/{version}/cloudtasks_grpc_service_config.json",
-            "package-name":f"@google-cloud/tasks",
-            "main-service": f"tasks"
+            "package-name": "@google-cloud/tasks",
+            "main-service": "tasks"
         },
         proto_path=f'/google/cloud/tasks/{version}',
         extra_proto_files=['google/cloud/common_resources.proto'],
@@ -43,13 +43,6 @@ for version in versions:
 common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library(source_location='build/src')
 s.copy(templates)
-
-s.replace('**/src/**/cloud_tasks_client_config.json',
-        '"initial_rpc_timeout_millis": 60000',
-        '"initial_rpc_timeout_millis": 20000')
-s.replace('**/src/**/cloud_tasks_client_config.json',
-        '"max_rpc_timeout_millis": 60000',
-        '"max_rpc_timeout_millis": 20000')
 
 # Node.js specific cleanup
 subprocess.run(["npm", "install"])
