@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/nodejs-tasks.git",
-        "sha": "d5179da1598dbb7a3cebd67838825594d266973d"
+        "remote": "https://github.com/googleapis/nodejs-tasks.git",
+        "sha": "b6d37271e851b3b25de97cb66286b7b9fac0d924"
       }
     },
     {
