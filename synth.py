@@ -44,6 +44,13 @@ common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library(source_location='build/src')
 s.copy(templates)
 
+s.replace('**/src/**/cloud_tasks_client_config.json',
+        '"initial_rpc_timeout_millis": 60000',
+        '"initial_rpc_timeout_millis": 20000')
+s.replace('**/src/**/cloud_tasks_client_config.json',
+        '"max_rpc_timeout_millis": 60000',
+        '"max_rpc_timeout_millis": 20000')
+
 # Node.js specific cleanup
 subprocess.run(["npm", "install"])
 subprocess.run(["npm", "run", "fix"])
