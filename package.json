@@ -1,7 +1,7 @@
 {
   "name": "@google-cloud/tasks",
   "description": "Cloud Tasks API client for Node.js",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "Apache-2.0",
   "author": "Google LLC",
   "engines": {
@@ -11,9 +11,7 @@
   "main": "build/src/index.js",
   "files": [
     "build/protos",
-    "build/src",
-    "AUTHORS",
-    "COPYING"
+    "build/src"
   ],
   "keywords": [
     "google apis client",
@@ -32,7 +30,7 @@
     "test": "c8 mocha build/test",
     "samples-test": "cd samples/ && npm link ../ && npm install && npm test && cd ../",
     "system-test": "mocha build/system-test",
-    "lint": "gts fix",
+    "lint": "gts check",
     "fix": "gts fix",
     "docs": "jsdoc -c .jsdoc.js",
     "docs-test": "linkinator docs",
@@ -41,7 +39,8 @@
     "compile-protos": "compileProtos src",
     "predocs-test": "npm run docs",
     "prepare": "npm run compile",
-    "prelint": "cd samples; npm link ../; npm install"
+    "prelint": "cd samples; npm link ../; npm install",
+    "precompile": "gts clean"
   },
   "dependencies": {
     "google-gax": "^2.1.0"
@@ -57,12 +56,11 @@
     "jsdoc-fresh": "^1.0.2",
     "jsdoc-region-tag": "^1.0.2",
     "linkinator": "^2.0.0",
-    "mocha": "^7.0.0",
-    "null-loader": "^3.0.0",
+    "mocha": "^8.0.0",
+    "null-loader": "^4.0.0",
     "pack-n-play": "^1.0.0-2",
-    "prettier": "^1.11.1",
     "sinon": "^9.0.1",
-    "ts-loader": "^6.2.1",
+    "ts-loader": "^7.0.0",
     "typescript": "^3.8.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"

@@ -5,22 +5,24 @@
   "author": "Google Inc.",
   "private": true,
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
+  "files": [
+    "*.js"
+  ],
   "scripts": {
     "test": "mocha",
-    "start": "node server.js",
-    "lint": "eslint '**/*.js'"
+    "start": "node server.js"
   },
   "dependencies": {
-    "@google-cloud/tasks": "^2.0.0",
+    "@google-cloud/tasks": "^2.0.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "yargs": "^15.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.0.0",
-    "uuid": "^7.0.0"
+    "mocha": "^8.0.0",
+    "uuid": "^8.0.0"
   }
 }
