@@ -14,7 +14,6 @@
 
 'use strict';
 
-// [START cloud_tasks_create_queue]
 /**
  * Create a new Task Queue
  */
@@ -51,7 +50,6 @@ function main(
   createQueue();
   // [END cloud_tasks_create_queue]
 }
-// [END cloud_tasks_create_queue]
 
 process.on('unhandledRejection', err => {
   console.error(err.message);

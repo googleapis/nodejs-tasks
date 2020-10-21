@@ -72,9 +72,9 @@ function main(
     const request = {parent, task};
     const [response] = await client.createTask(request);
     console.log(`Created task ${response.name}`);
-    // [END cloud_tasks_create_http_task]
   }
   createHttpTask();
+  // [END cloud_tasks_create_http_task]
 }
 
 process.on('unhandledRejection', err => {
