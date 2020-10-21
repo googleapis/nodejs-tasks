@@ -19,7 +19,7 @@
  * Create a task for a given queue with an arbitrary payload.
  */
 async function createTask(project, location, queue, payload, inSeconds) {
-  // [START tasks_quickstart]
+  // [START cloud_tasks_quickstart]
   // Imports the Google Cloud Tasks library.
   const {CloudTasksClient} = require('@google-cloud/tasks');
 
@@ -64,7 +64,7 @@ async function createTask(project, location, queue, payload, inSeconds) {
   const name = response.name;
   console.log(`Created task ${name}`);
 
-  // [END tasks_quickstart]
+  // [END cloud_tasks_quickstart]
 }
 
 createTask(...process.argv.slice(2)).catch(console.error);
