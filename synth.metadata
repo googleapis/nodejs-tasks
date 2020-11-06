@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/nodejs-tasks.git",
-        "sha": "253847d51804a30b670cb6dbd8f6074d4ae13591"
+        "sha": "c7104dc7bee055124c687555d2ed7fd00e1489ba"
       }
     },
     {
