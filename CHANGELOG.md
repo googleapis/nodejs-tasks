@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/nodejs-tasks?activeTab=versions
 
+### [2.1.4](https://www.github.com/googleapis/nodejs-tasks/compare/v2.1.3...v2.1.4) (2021-01-02)
+
+
+### Bug Fixes
+
+* **samples:** remove unused variables ([#492](https://www.github.com/googleapis/nodejs-tasks/issues/492)) ([81c4b4e](https://www.github.com/googleapis/nodejs-tasks/commit/81c4b4ece21eb99cec582d3256192de6c402d771))
+
 ### [2.1.3](https://www.github.com/googleapis/nodejs-tasks/compare/v2.1.2...v2.1.3) (2020-11-25)
 
 
