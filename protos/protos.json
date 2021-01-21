@@ -1298,6 +1298,13 @@
                         "pageToken": {
                           "type": "string",
                           "id": 4
+                        },
+                        "readMask": {
+                          "type": "google.protobuf.FieldMask",
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1322,6 +1329,13 @@
                           "options": {
                             "(google.api.field_behavior)": "REQUIRED",
                             "(google.api.resource_reference).type": "cloudtasks.googleapis.com/Queue"
+                          }
+                        },
+                        "readMask": {
+                          "type": "google.protobuf.FieldMask",
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
                           }
                         }
                       }
@@ -1665,6 +1679,21 @@
                         "purgeTime": {
                           "type": "google.protobuf.Timestamp",
                           "id": 8
+                        },
+                        "taskTtl": {
+                          "type": "google.protobuf.Duration",
+                          "id": 9
+                        },
+                        "tombstoneTtl": {
+                          "type": "google.protobuf.Duration",
+                          "id": 10
+                        },
+                        "stats": {
+                          "type": "QueueStats",
+                          "id": 16,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         }
                       },
                       "nested": {
@@ -1727,6 +1756,45 @@
                         "maxDoublings": {
                           "type": "int32",
                           "id": 6
+                        }
+                      }
+                    },
+                    "QueueStats": {
+                      "fields": {
+                        "tasksCount": {
+                          "type": "int64",
+                          "id": 1,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
+                        },
+                        "oldestEstimatedArrivalTime": {
+                          "type": "google.protobuf.Timestamp",
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
+                        },
+                        "executedLastMinuteCount": {
+                          "type": "int64",
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
+                        },
+                        "concurrentDispatchesCount": {
+                          "type": "int64",
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
+                        },
+                        "effectiveExecutionRate": {
+                          "type": "double",
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         }
                       }
                     },

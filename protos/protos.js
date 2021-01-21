@@ -7968,6 +7968,7 @@
                          * @property {string|null} [filter] ListQueuesRequest filter
                          * @property {number|null} [pageSize] ListQueuesRequest pageSize
                          * @property {string|null} [pageToken] ListQueuesRequest pageToken
+                         * @property {google.protobuf.IFieldMask|null} [readMask] ListQueuesRequest readMask
                          */
     
                         /**
@@ -8018,6 +8019,14 @@
                         ListQueuesRequest.prototype.pageToken = "";
     
                         /**
+                         * ListQueuesRequest readMask.
+                         * @member {google.protobuf.IFieldMask|null|undefined} readMask
+                         * @memberof google.cloud.tasks.v2beta2.ListQueuesRequest
+                         * @instance
+                         */
+                        ListQueuesRequest.prototype.readMask = null;
+    
+                        /**
                          * Creates a new ListQueuesRequest instance using the specified properties.
                          * @function create
                          * @memberof google.cloud.tasks.v2beta2.ListQueuesRequest
@@ -8049,6 +8058,8 @@
                                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.pageSize);
                             if (message.pageToken != null && Object.hasOwnProperty.call(message, "pageToken"))
                                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.pageToken);
+                            if (message.readMask != null && Object.hasOwnProperty.call(message, "readMask"))
+                                $root.google.protobuf.FieldMask.encode(message.readMask, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                             return writer;
                         };
     
@@ -8094,6 +8105,9 @@
                                     break;
                                 case 4:
                                     message.pageToken = reader.string();
+                                    break;
+                                case 5:
+                                    message.readMask = $root.google.protobuf.FieldMask.decode(reader, reader.uint32());
                                     break;
                                 default:
                                     reader.skipType(tag & 7);
@@ -8142,6 +8156,11 @@
                             if (message.pageToken != null && message.hasOwnProperty("pageToken"))
                                 if (!$util.isString(message.pageToken))
                                     return "pageToken: string expected";
+                            if (message.readMask != null && message.hasOwnProperty("readMask")) {
+                                var error = $root.google.protobuf.FieldMask.verify(message.readMask);
+                                if (error)
+                                    return "readMask." + error;
+                            }
                             return null;
                         };
     
@@ -8165,6 +8184,11 @@
                                 message.pageSize = object.pageSize | 0;
                             if (object.pageToken != null)
                                 message.pageToken = String(object.pageToken);
+                            if (object.readMask != null) {
+                                if (typeof object.readMask !== "object")
+                                    throw TypeError(".google.cloud.tasks.v2beta2.ListQueuesRequest.readMask: object expected");
+                                message.readMask = $root.google.protobuf.FieldMask.fromObject(object.readMask);
+                            }
                             return message;
                         };
     
@@ -8186,6 +8210,7 @@
                                 object.filter = "";
                                 object.pageSize = 0;
                                 object.pageToken = "";
+                                object.readMask = null;
                             }
                             if (message.parent != null && message.hasOwnProperty("parent"))
                                 object.parent = message.parent;
@@ -8195,6 +8220,8 @@
                                 object.pageSize = message.pageSize;
                             if (message.pageToken != null && message.hasOwnProperty("pageToken"))
                                 object.pageToken = message.pageToken;
+                            if (message.readMask != null && message.hasOwnProperty("readMask"))
+                                object.readMask = $root.google.protobuf.FieldMask.toObject(message.readMask, options);
                             return object;
                         };
     
@@ -8450,6 +8477,7 @@
                          * @memberof google.cloud.tasks.v2beta2
                          * @interface IGetQueueRequest
                          * @property {string|null} [name] GetQueueRequest name
+                         * @property {google.protobuf.IFieldMask|null} [readMask] GetQueueRequest readMask
                          */
     
                         /**
@@ -8474,6 +8502,14 @@
                          * @instance
                          */
                         GetQueueRequest.prototype.name = "";
+    
+                        /**
+                         * GetQueueRequest readMask.
+                         * @member {google.protobuf.IFieldMask|null|undefined} readMask
+                         * @memberof google.cloud.tasks.v2beta2.GetQueueRequest
+                         * @instance
+                         */
+                        GetQueueRequest.prototype.readMask = null;
     
                         /**
                          * Creates a new GetQueueRequest instance using the specified properties.
@@ -8501,6 +8537,8 @@
                                 writer = $Writer.create();
                             if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                            if (message.readMask != null && Object.hasOwnProperty.call(message, "readMask"))
+                                $root.google.protobuf.FieldMask.encode(message.readMask, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                             return writer;
                         };
     
@@ -8537,6 +8575,9 @@
                                 switch (tag >>> 3) {
                                 case 1:
                                     message.name = reader.string();
+                                    break;
+                                case 2:
+                                    message.readMask = $root.google.protobuf.FieldMask.decode(reader, reader.uint32());
                                     break;
                                 default:
                                     reader.skipType(tag & 7);
@@ -8576,6 +8617,11 @@
                             if (message.name != null && message.hasOwnProperty("name"))
                                 if (!$util.isString(message.name))
                                     return "name: string expected";
+                            if (message.readMask != null && message.hasOwnProperty("readMask")) {
+                                var error = $root.google.protobuf.FieldMask.verify(message.readMask);
+                                if (error)
+                                    return "readMask." + error;
+                            }
                             return null;
                         };
     
@@ -8593,6 +8639,11 @@
                             var message = new $root.google.cloud.tasks.v2beta2.GetQueueRequest();
                             if (object.name != null)
                                 message.name = String(object.name);
+                            if (object.readMask != null) {
+                                if (typeof object.readMask !== "object")
+                                    throw TypeError(".google.cloud.tasks.v2beta2.GetQueueRequest.readMask: object expected");
+                                message.readMask = $root.google.protobuf.FieldMask.fromObject(object.readMask);
+                            }
                             return message;
                         };
     
@@ -8609,10 +8660,14 @@
                             if (!options)
                                 options = {};
                             var object = {};
-                            if (options.defaults)
+                            if (options.defaults) {
                                 object.name = "";
+                                object.readMask = null;
+                            }
                             if (message.name != null && message.hasOwnProperty("name"))
                                 object.name = message.name;
+                            if (message.readMask != null && message.hasOwnProperty("readMask"))
+                                object.readMask = $root.google.protobuf.FieldMask.toObject(message.readMask, options);
                             return object;
                         };
     
@@ -12486,6 +12541,9 @@
                          * @property {google.cloud.tasks.v2beta2.IRetryConfig|null} [retryConfig] Queue retryConfig
                          * @property {google.cloud.tasks.v2beta2.Queue.State|null} [state] Queue state
                          * @property {google.protobuf.ITimestamp|null} [purgeTime] Queue purgeTime
+                         * @property {google.protobuf.IDuration|null} [taskTtl] Queue taskTtl
+                         * @property {google.protobuf.IDuration|null} [tombstoneTtl] Queue tombstoneTtl
+                         * @property {google.cloud.tasks.v2beta2.IQueueStats|null} [stats] Queue stats
                          */
     
                         /**
@@ -12559,6 +12617,30 @@
                          */
                         Queue.prototype.purgeTime = null;
     
+                        /**
+                         * Queue taskTtl.
+                         * @member {google.protobuf.IDuration|null|undefined} taskTtl
+                         * @memberof google.cloud.tasks.v2beta2.Queue
+                         * @instance
+                         */
+                        Queue.prototype.taskTtl = null;
+    
+                        /**
+                         * Queue tombstoneTtl.
+                         * @member {google.protobuf.IDuration|null|undefined} tombstoneTtl
+                         * @memberof google.cloud.tasks.v2beta2.Queue
+                         * @instance
+                         */
+                        Queue.prototype.tombstoneTtl = null;
+    
+                        /**
+                         * Queue stats.
+                         * @member {google.cloud.tasks.v2beta2.IQueueStats|null|undefined} stats
+                         * @memberof google.cloud.tasks.v2beta2.Queue
+                         * @instance
+                         */
+                        Queue.prototype.stats = null;
+    
                         // OneOf field names bound to virtual getters and setters
                         var $oneOfFields;
     
@@ -12611,6 +12693,12 @@
                                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.state);
                             if (message.purgeTime != null && Object.hasOwnProperty.call(message, "purgeTime"))
                                 $root.google.protobuf.Timestamp.encode(message.purgeTime, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                            if (message.taskTtl != null && Object.hasOwnProperty.call(message, "taskTtl"))
+                                $root.google.protobuf.Duration.encode(message.taskTtl, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                            if (message.tombstoneTtl != null && Object.hasOwnProperty.call(message, "tombstoneTtl"))
+                                $root.google.protobuf.Duration.encode(message.tombstoneTtl, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                            if (message.stats != null && Object.hasOwnProperty.call(message, "stats"))
+                                $root.google.cloud.tasks.v2beta2.QueueStats.encode(message.stats, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                             return writer;
                         };
     
@@ -12665,6 +12753,15 @@
                                     break;
                                 case 8:
                                     message.purgeTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                                    break;
+                                case 9:
+                                    message.taskTtl = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                                    break;
+                                case 10:
+                                    message.tombstoneTtl = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                                    break;
+                                case 16:
+                                    message.stats = $root.google.cloud.tasks.v2beta2.QueueStats.decode(reader, reader.uint32());
                                     break;
                                 default:
                                     reader.skipType(tag & 7);
@@ -12748,6 +12845,21 @@
                                 if (error)
                                     return "purgeTime." + error;
                             }
+                            if (message.taskTtl != null && message.hasOwnProperty("taskTtl")) {
+                                var error = $root.google.protobuf.Duration.verify(message.taskTtl);
+                                if (error)
+                                    return "taskTtl." + error;
+                            }
+                            if (message.tombstoneTtl != null && message.hasOwnProperty("tombstoneTtl")) {
+                                var error = $root.google.protobuf.Duration.verify(message.tombstoneTtl);
+                                if (error)
+                                    return "tombstoneTtl." + error;
+                            }
+                            if (message.stats != null && message.hasOwnProperty("stats")) {
+                                var error = $root.google.cloud.tasks.v2beta2.QueueStats.verify(message.stats);
+                                if (error)
+                                    return "stats." + error;
+                            }
                             return null;
                         };
     
@@ -12808,6 +12920,21 @@
                                     throw TypeError(".google.cloud.tasks.v2beta2.Queue.purgeTime: object expected");
                                 message.purgeTime = $root.google.protobuf.Timestamp.fromObject(object.purgeTime);
                             }
+                            if (object.taskTtl != null) {
+                                if (typeof object.taskTtl !== "object")
+                                    throw TypeError(".google.cloud.tasks.v2beta2.Queue.taskTtl: object expected");
+                                message.taskTtl = $root.google.protobuf.Duration.fromObject(object.taskTtl);
+                            }
+                            if (object.tombstoneTtl != null) {
+                                if (typeof object.tombstoneTtl !== "object")
+                                    throw TypeError(".google.cloud.tasks.v2beta2.Queue.tombstoneTtl: object expected");
+                                message.tombstoneTtl = $root.google.protobuf.Duration.fromObject(object.tombstoneTtl);
+                            }
+                            if (object.stats != null) {
+                                if (typeof object.stats !== "object")
+                                    throw TypeError(".google.cloud.tasks.v2beta2.Queue.stats: object expected");
+                                message.stats = $root.google.cloud.tasks.v2beta2.QueueStats.fromObject(object.stats);
+                            }
                             return message;
                         };
     
@@ -12830,6 +12957,9 @@
                                 object.retryConfig = null;
                                 object.state = options.enums === String ? "STATE_UNSPECIFIED" : 0;
                                 object.purgeTime = null;
+                                object.taskTtl = null;
+                                object.tombstoneTtl = null;
+                                object.stats = null;
                             }
                             if (message.name != null && message.hasOwnProperty("name"))
                                 object.name = message.name;
@@ -12851,6 +12981,12 @@
                                 object.state = options.enums === String ? $root.google.cloud.tasks.v2beta2.Queue.State[message.state] : message.state;
                             if (message.purgeTime != null && message.hasOwnProperty("purgeTime"))
                                 object.purgeTime = $root.google.protobuf.Timestamp.toObject(message.purgeTime, options);
+                            if (message.taskTtl != null && message.hasOwnProperty("taskTtl"))
+                                object.taskTtl = $root.google.protobuf.Duration.toObject(message.taskTtl, options);
+                            if (message.tombstoneTtl != null && message.hasOwnProperty("tombstoneTtl"))
+                                object.tombstoneTtl = $root.google.protobuf.Duration.toObject(message.tombstoneTtl, options);
+                            if (message.stats != null && message.hasOwnProperty("stats"))
+                                object.stats = $root.google.cloud.tasks.v2beta2.QueueStats.toObject(message.stats, options);
                             return object;
                         };
     
@@ -13454,6 +13590,329 @@
                         };
     
                         return RetryConfig;
+                    })();
+    
+                    v2beta2.QueueStats = (function() {
+    
+                        /**
+                         * Properties of a QueueStats.
+                         * @memberof google.cloud.tasks.v2beta2
+                         * @interface IQueueStats
+                         * @property {number|Long|null} [tasksCount] QueueStats tasksCount
+                         * @property {google.protobuf.ITimestamp|null} [oldestEstimatedArrivalTime] QueueStats oldestEstimatedArrivalTime
+                         * @property {number|Long|null} [executedLastMinuteCount] QueueStats executedLastMinuteCount
+                         * @property {number|Long|null} [concurrentDispatchesCount] QueueStats concurrentDispatchesCount
+                         * @property {number|null} [effectiveExecutionRate] QueueStats effectiveExecutionRate
+                         */
+    
+                        /**
+                         * Constructs a new QueueStats.
+                         * @memberof google.cloud.tasks.v2beta2
+                         * @classdesc Represents a QueueStats.
+                         * @implements IQueueStats
+                         * @constructor
+                         * @param {google.cloud.tasks.v2beta2.IQueueStats=} [properties] Properties to set
+                         */
+                        function QueueStats(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * QueueStats tasksCount.
+                         * @member {number|Long} tasksCount
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @instance
+                         */
+                        QueueStats.prototype.tasksCount = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                        /**
+                         * QueueStats oldestEstimatedArrivalTime.
+                         * @member {google.protobuf.ITimestamp|null|undefined} oldestEstimatedArrivalTime
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @instance
+                         */
+                        QueueStats.prototype.oldestEstimatedArrivalTime = null;
+    
+                        /**
+                         * QueueStats executedLastMinuteCount.
+                         * @member {number|Long} executedLastMinuteCount
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @instance
+                         */
+                        QueueStats.prototype.executedLastMinuteCount = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                        /**
+                         * QueueStats concurrentDispatchesCount.
+                         * @member {number|Long} concurrentDispatchesCount
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @instance
+                         */
+                        QueueStats.prototype.concurrentDispatchesCount = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                        /**
+                         * QueueStats effectiveExecutionRate.
+                         * @member {number} effectiveExecutionRate
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @instance
+                         */
+                        QueueStats.prototype.effectiveExecutionRate = 0;
+    
+                        /**
+                         * Creates a new QueueStats instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @static
+                         * @param {google.cloud.tasks.v2beta2.IQueueStats=} [properties] Properties to set
+                         * @returns {google.cloud.tasks.v2beta2.QueueStats} QueueStats instance
+                         */
+                        QueueStats.create = function create(properties) {
+                            return new QueueStats(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified QueueStats message. Does not implicitly {@link google.cloud.tasks.v2beta2.QueueStats.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @static
+                         * @param {google.cloud.tasks.v2beta2.IQueueStats} message QueueStats message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        QueueStats.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.tasksCount != null && Object.hasOwnProperty.call(message, "tasksCount"))
+                                writer.uint32(/* id 1, wireType 0 =*/8).int64(message.tasksCount);
+                            if (message.oldestEstimatedArrivalTime != null && Object.hasOwnProperty.call(message, "oldestEstimatedArrivalTime"))
+                                $root.google.protobuf.Timestamp.encode(message.oldestEstimatedArrivalTime, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            if (message.executedLastMinuteCount != null && Object.hasOwnProperty.call(message, "executedLastMinuteCount"))
+                                writer.uint32(/* id 3, wireType 0 =*/24).int64(message.executedLastMinuteCount);
+                            if (message.concurrentDispatchesCount != null && Object.hasOwnProperty.call(message, "concurrentDispatchesCount"))
+                                writer.uint32(/* id 4, wireType 0 =*/32).int64(message.concurrentDispatchesCount);
+                            if (message.effectiveExecutionRate != null && Object.hasOwnProperty.call(message, "effectiveExecutionRate"))
+                                writer.uint32(/* id 5, wireType 1 =*/41).double(message.effectiveExecutionRate);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified QueueStats message, length delimited. Does not implicitly {@link google.cloud.tasks.v2beta2.QueueStats.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @static
+                         * @param {google.cloud.tasks.v2beta2.IQueueStats} message QueueStats message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        QueueStats.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a QueueStats message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.tasks.v2beta2.QueueStats} QueueStats
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        QueueStats.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.tasks.v2beta2.QueueStats();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.tasksCount = reader.int64();
+                                    break;
+                                case 2:
+                                    message.oldestEstimatedArrivalTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                                    break;
+                                case 3:
+                                    message.executedLastMinuteCount = reader.int64();
+                                    break;
+                                case 4:
+                                    message.concurrentDispatchesCount = reader.int64();
+                                    break;
+                                case 5:
+                                    message.effectiveExecutionRate = reader.double();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a QueueStats message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.tasks.v2beta2.QueueStats} QueueStats
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        QueueStats.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a QueueStats message.
+                         * @function verify
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        QueueStats.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.tasksCount != null && message.hasOwnProperty("tasksCount"))
+                                if (!$util.isInteger(message.tasksCount) && !(message.tasksCount && $util.isInteger(message.tasksCount.low) && $util.isInteger(message.tasksCount.high)))
+                                    return "tasksCount: integer|Long expected";
+                            if (message.oldestEstimatedArrivalTime != null && message.hasOwnProperty("oldestEstimatedArrivalTime")) {
+                                var error = $root.google.protobuf.Timestamp.verify(message.oldestEstimatedArrivalTime);
+                                if (error)
+                                    return "oldestEstimatedArrivalTime." + error;
+                            }
+                            if (message.executedLastMinuteCount != null && message.hasOwnProperty("executedLastMinuteCount"))
+                                if (!$util.isInteger(message.executedLastMinuteCount) && !(message.executedLastMinuteCount && $util.isInteger(message.executedLastMinuteCount.low) && $util.isInteger(message.executedLastMinuteCount.high)))
+                                    return "executedLastMinuteCount: integer|Long expected";
+                            if (message.concurrentDispatchesCount != null && message.hasOwnProperty("concurrentDispatchesCount"))
+                                if (!$util.isInteger(message.concurrentDispatchesCount) && !(message.concurrentDispatchesCount && $util.isInteger(message.concurrentDispatchesCount.low) && $util.isInteger(message.concurrentDispatchesCount.high)))
+                                    return "concurrentDispatchesCount: integer|Long expected";
+                            if (message.effectiveExecutionRate != null && message.hasOwnProperty("effectiveExecutionRate"))
+                                if (typeof message.effectiveExecutionRate !== "number")
+                                    return "effectiveExecutionRate: number expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a QueueStats message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.tasks.v2beta2.QueueStats} QueueStats
+                         */
+                        QueueStats.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.tasks.v2beta2.QueueStats)
+                                return object;
+                            var message = new $root.google.cloud.tasks.v2beta2.QueueStats();
+                            if (object.tasksCount != null)
+                                if ($util.Long)
+                                    (message.tasksCount = $util.Long.fromValue(object.tasksCount)).unsigned = false;
+                                else if (typeof object.tasksCount === "string")
+                                    message.tasksCount = parseInt(object.tasksCount, 10);
+                                else if (typeof object.tasksCount === "number")
+                                    message.tasksCount = object.tasksCount;
+                                else if (typeof object.tasksCount === "object")
+                                    message.tasksCount = new $util.LongBits(object.tasksCount.low >>> 0, object.tasksCount.high >>> 0).toNumber();
+                            if (object.oldestEstimatedArrivalTime != null) {
+                                if (typeof object.oldestEstimatedArrivalTime !== "object")
+                                    throw TypeError(".google.cloud.tasks.v2beta2.QueueStats.oldestEstimatedArrivalTime: object expected");
+                                message.oldestEstimatedArrivalTime = $root.google.protobuf.Timestamp.fromObject(object.oldestEstimatedArrivalTime);
+                            }
+                            if (object.executedLastMinuteCount != null)
+                                if ($util.Long)
+                                    (message.executedLastMinuteCount = $util.Long.fromValue(object.executedLastMinuteCount)).unsigned = false;
+                                else if (typeof object.executedLastMinuteCount === "string")
+                                    message.executedLastMinuteCount = parseInt(object.executedLastMinuteCount, 10);
+                                else if (typeof object.executedLastMinuteCount === "number")
+                                    message.executedLastMinuteCount = object.executedLastMinuteCount;
+                                else if (typeof object.executedLastMinuteCount === "object")
+                                    message.executedLastMinuteCount = new $util.LongBits(object.executedLastMinuteCount.low >>> 0, object.executedLastMinuteCount.high >>> 0).toNumber();
+                            if (object.concurrentDispatchesCount != null)
+                                if ($util.Long)
+                                    (message.concurrentDispatchesCount = $util.Long.fromValue(object.concurrentDispatchesCount)).unsigned = false;
+                                else if (typeof object.concurrentDispatchesCount === "string")
+                                    message.concurrentDispatchesCount = parseInt(object.concurrentDispatchesCount, 10);
+                                else if (typeof object.concurrentDispatchesCount === "number")
+                                    message.concurrentDispatchesCount = object.concurrentDispatchesCount;
+                                else if (typeof object.concurrentDispatchesCount === "object")
+                                    message.concurrentDispatchesCount = new $util.LongBits(object.concurrentDispatchesCount.low >>> 0, object.concurrentDispatchesCount.high >>> 0).toNumber();
+                            if (object.effectiveExecutionRate != null)
+                                message.effectiveExecutionRate = Number(object.effectiveExecutionRate);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a QueueStats message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @static
+                         * @param {google.cloud.tasks.v2beta2.QueueStats} message QueueStats
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        QueueStats.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                if ($util.Long) {
+                                    var long = new $util.Long(0, 0, false);
+                                    object.tasksCount = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                } else
+                                    object.tasksCount = options.longs === String ? "0" : 0;
+                                object.oldestEstimatedArrivalTime = null;
+                                if ($util.Long) {
+                                    var long = new $util.Long(0, 0, false);
+                                    object.executedLastMinuteCount = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                } else
+                                    object.executedLastMinuteCount = options.longs === String ? "0" : 0;
+                                if ($util.Long) {
+                                    var long = new $util.Long(0, 0, false);
+                                    object.concurrentDispatchesCount = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                } else
+                                    object.concurrentDispatchesCount = options.longs === String ? "0" : 0;
+                                object.effectiveExecutionRate = 0;
+                            }
+                            if (message.tasksCount != null && message.hasOwnProperty("tasksCount"))
+                                if (typeof message.tasksCount === "number")
+                                    object.tasksCount = options.longs === String ? String(message.tasksCount) : message.tasksCount;
+                                else
+                                    object.tasksCount = options.longs === String ? $util.Long.prototype.toString.call(message.tasksCount) : options.longs === Number ? new $util.LongBits(message.tasksCount.low >>> 0, message.tasksCount.high >>> 0).toNumber() : message.tasksCount;
+                            if (message.oldestEstimatedArrivalTime != null && message.hasOwnProperty("oldestEstimatedArrivalTime"))
+                                object.oldestEstimatedArrivalTime = $root.google.protobuf.Timestamp.toObject(message.oldestEstimatedArrivalTime, options);
+                            if (message.executedLastMinuteCount != null && message.hasOwnProperty("executedLastMinuteCount"))
+                                if (typeof message.executedLastMinuteCount === "number")
+                                    object.executedLastMinuteCount = options.longs === String ? String(message.executedLastMinuteCount) : message.executedLastMinuteCount;
+                                else
+                                    object.executedLastMinuteCount = options.longs === String ? $util.Long.prototype.toString.call(message.executedLastMinuteCount) : options.longs === Number ? new $util.LongBits(message.executedLastMinuteCount.low >>> 0, message.executedLastMinuteCount.high >>> 0).toNumber() : message.executedLastMinuteCount;
+                            if (message.concurrentDispatchesCount != null && message.hasOwnProperty("concurrentDispatchesCount"))
+                                if (typeof message.concurrentDispatchesCount === "number")
+                                    object.concurrentDispatchesCount = options.longs === String ? String(message.concurrentDispatchesCount) : message.concurrentDispatchesCount;
+                                else
+                                    object.concurrentDispatchesCount = options.longs === String ? $util.Long.prototype.toString.call(message.concurrentDispatchesCount) : options.longs === Number ? new $util.LongBits(message.concurrentDispatchesCount.low >>> 0, message.concurrentDispatchesCount.high >>> 0).toNumber() : message.concurrentDispatchesCount;
+                            if (message.effectiveExecutionRate != null && message.hasOwnProperty("effectiveExecutionRate"))
+                                object.effectiveExecutionRate = options.json && !isFinite(message.effectiveExecutionRate) ? String(message.effectiveExecutionRate) : message.effectiveExecutionRate;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this QueueStats to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.tasks.v2beta2.QueueStats
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        QueueStats.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return QueueStats;
                     })();
     
                     v2beta2.PullTarget = (function() {
