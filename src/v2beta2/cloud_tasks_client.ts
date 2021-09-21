@@ -396,6 +396,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.getQueue(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.get_queue.js</caption>
+   * region_tag:tasks_get_queue_sample
+   *
    */
   getQueue(
     request?: protos.google.cloud.tasks.v2beta2.IGetQueueRequest,
@@ -499,6 +503,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.createQueue(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.create_queue.js</caption>
+   * region_tag:tasks_create_queue_sample
+   *
    */
   createQueue(
     request?: protos.google.cloud.tasks.v2beta2.ICreateQueueRequest,
@@ -608,6 +616,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.updateQueue(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.update_queue.js</caption>
+   * region_tag:tasks_update_queue_sample
+   *
    */
   updateQueue(
     request?: protos.google.cloud.tasks.v2beta2.IUpdateQueueRequest,
@@ -706,6 +718,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.deleteQueue(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.delete_queue.js</caption>
+   * region_tag:tasks_delete_queue_sample
+   *
    */
   deleteQueue(
     request?: protos.google.cloud.tasks.v2beta2.IDeleteQueueRequest,
@@ -797,6 +813,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.purgeQueue(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.purge_queue.js</caption>
+   * region_tag:tasks_purge_queue_sample
+   *
    */
   purgeQueue(
     request?: protos.google.cloud.tasks.v2beta2.IPurgeQueueRequest,
@@ -889,6 +909,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.pauseQueue(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.pause_queue.js</caption>
+   * region_tag:tasks_pause_queue_sample
+   *
    */
   pauseQueue(
     request?: protos.google.cloud.tasks.v2beta2.IPauseQueueRequest,
@@ -987,6 +1011,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.resumeQueue(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.resume_queue.js</caption>
+   * region_tag:tasks_resume_queue_sample
+   *
    */
   resumeQueue(
     request?: protos.google.cloud.tasks.v2beta2.IResumeQueueRequest,
@@ -1084,6 +1112,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.getIamPolicy(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.get_iam_policy.js</caption>
+   * region_tag:tasks_get_iam_policy_sample
+   *
    */
   getIamPolicy(
     request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -1183,6 +1215,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.setIamPolicy(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.set_iam_policy.js</caption>
+   * region_tag:tasks_set_iam_policy_sample
+   *
    */
   setIamPolicy(
     request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -1278,6 +1314,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.testIamPermissions(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.test_iam_permissions.js</caption>
+   * region_tag:tasks_test_iam_permissions_sample
+   *
    */
   testIamPermissions(
     request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -1375,6 +1415,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.getTask(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.get_task.js</caption>
+   * region_tag:tasks_get_task_sample
+   *
    */
   getTask(
     request?: protos.google.cloud.tasks.v2beta2.IGetTaskRequest,
@@ -1514,6 +1558,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.createTask(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.create_task.js</caption>
+   * region_tag:tasks_create_task_sample
+   *
    */
   createTask(
     request?: protos.google.cloud.tasks.v2beta2.ICreateTaskRequest,
@@ -1604,6 +1652,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.deleteTask(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.delete_task.js</caption>
+   * region_tag:tasks_delete_task_sample
+   *
    */
   deleteTask(
     request?: protos.google.cloud.tasks.v2beta2.IDeleteTaskRequest,
@@ -1785,6 +1837,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.leaseTasks(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.lease_tasks.js</caption>
+   * region_tag:tasks_lease_tasks_sample
+   *
    */
   leaseTasks(
     request?: protos.google.cloud.tasks.v2beta2.ILeaseTasksRequest,
@@ -1893,6 +1949,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.acknowledgeTask(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.acknowledge_task.js</caption>
+   * region_tag:tasks_acknowledge_task_sample
+   *
    */
   acknowledgeTask(
     request?: protos.google.cloud.tasks.v2beta2.IAcknowledgeTaskRequest,
@@ -2010,6 +2070,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.renewLease(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.renew_lease.js</caption>
+   * region_tag:tasks_renew_lease_sample
+   *
    */
   renewLease(
     request?: protos.google.cloud.tasks.v2beta2.IRenewLeaseRequest,
@@ -2120,6 +2184,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.cancelLease(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.cancel_lease.js</caption>
+   * region_tag:tasks_cancel_lease_sample
+   *
    */
   cancelLease(
     request?: protos.google.cloud.tasks.v2beta2.ICancelLeaseRequest,
@@ -2245,6 +2313,10 @@ export class CloudTasksClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.runTask(request);
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.run_task.js</caption>
+   * region_tag:tasks_run_task_sample
+   *
    */
   runTask(
     request?: protos.google.cloud.tasks.v2beta2.IRunTaskRequest,
@@ -2369,6 +2441,10 @@ export class CloudTasksClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.list_queues.js</caption>
+   * region_tag:tasks_list_queues_sample
+   *
    */
   listQueues(
     request?: protos.google.cloud.tasks.v2beta2.IListQueuesRequest,
@@ -2464,6 +2540,10 @@ export class CloudTasksClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.list_queues.js</caption>
+   * region_tag:tasks_list_queues_sample
+   *
    */
   listQueuesStream(
     request?: protos.google.cloud.tasks.v2beta2.IListQueuesRequest,
@@ -2477,7 +2557,8 @@ export class CloudTasksClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listQueues'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listQueues.createStream(
       this.innerApiCalls.listQueues as gax.GaxCall,
@@ -2544,6 +2625,10 @@ export class CloudTasksClient {
    * for await (const response of iterable) {
    *   // process response
    * }
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.list_queues.js</caption>
+   * region_tag:tasks_list_queues_sample
+   *
    */
   listQueuesAsync(
     request?: protos.google.cloud.tasks.v2beta2.IListQueuesRequest,
@@ -2558,7 +2643,8 @@ export class CloudTasksClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listQueues'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listQueues.asyncIterate(
       this.innerApiCalls['listQueues'] as GaxCall,
@@ -2653,6 +2739,10 @@ export class CloudTasksClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.list_tasks.js</caption>
+   * region_tag:tasks_list_tasks_sample
+   *
    */
   listTasks(
     request?: protos.google.cloud.tasks.v2beta2.IListTasksRequest,
@@ -2746,6 +2836,10 @@ export class CloudTasksClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.list_tasks.js</caption>
+   * region_tag:tasks_list_tasks_sample
+   *
    */
   listTasksStream(
     request?: protos.google.cloud.tasks.v2beta2.IListTasksRequest,
@@ -2759,7 +2853,8 @@ export class CloudTasksClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTasks'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTasks.createStream(
       this.innerApiCalls.listTasks as gax.GaxCall,
@@ -2824,6 +2919,10 @@ export class CloudTasksClient {
    * for await (const response of iterable) {
    *   // process response
    * }
+   *
+   * @example <caption>include:samples/generated/v2beta2/cloud_tasks.list_tasks.js</caption>
+   * region_tag:tasks_list_tasks_sample
+   *
    */
   listTasksAsync(
     request?: protos.google.cloud.tasks.v2beta2.IListTasksRequest,
@@ -2838,7 +2937,8 @@ export class CloudTasksClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTasks'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTasks.asyncIterate(
       this.innerApiCalls['listTasks'] as GaxCall,
