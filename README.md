@@ -4,7 +4,7 @@
 
 # [Cloud Tasks: Node.js Client](https://github.com/googleapis/nodejs-tasks)
 
-
+[![release level](https://img.shields.io/badge/release%20level-stable-brightgreen.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
 [![npm version](https://img.shields.io/npm/v/@google-cloud/tasks.svg)](https://www.npmjs.org/package/@google-cloud/tasks)
 
 
