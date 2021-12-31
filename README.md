@@ -6,7 +6,6 @@
 
 
 [![npm version](https://img.shields.io/npm/v/@google-cloud/tasks.svg)](https://www.npmjs.org/package/@google-cloud/tasks)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-tasks/main.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-tasks)
 
 
 
