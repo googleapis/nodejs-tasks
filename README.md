@@ -75,6 +75,9 @@ async function quickstart() {
 
   const task = {
     appEngineHttpRequest: {
+      headers: {
+        'Content-Type': 'application/json'
+      },
       httpMethod: 'POST',
       relativeUri: '/log_payload',
     },

@@ -51,6 +51,9 @@ function main(
 
     const task = {
       httpRequest: {
+        headers: {
+          'Content-Type': 'application/json'
+        },
         httpMethod: 'POST',
         url,
       },
