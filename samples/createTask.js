@@ -49,7 +49,7 @@ function main(
     const task = {
       appEngineHttpRequest: {
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain',
         },
         httpMethod: 'POST',
         relativeUri: '/log_payload',
