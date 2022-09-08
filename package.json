@@ -1,7 +1,7 @@
 {
   "name": "@google-cloud/tasks",
   "description": "Cloud Tasks API client for Node.js",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "license": "Apache-2.0",
   "author": "Google LLC",
   "engines": {
@@ -43,7 +43,7 @@
     "precompile": "gts clean"
   },
   "dependencies": {
-    "google-gax": "^3.0.1"
+    "google-gax": "^3.3.0"
   },
   "devDependencies": {
     "@types/mocha": "^9.0.0",
