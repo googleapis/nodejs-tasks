@@ -35,18 +35,6 @@ describe('Cloud Task Sample Tests', () => {
     url = 'https://example.com/taskhandler';
   });
 
-  it('should create a queue', () => {
-    const stdout = exec(`node createQueue ${projectId} ${queueName}`);
-    assert.match(stdout, /Created queue/);
-  });
-
-  it('should create a task', () => {
-    const stdout = exec(
-      `node createTask ${projectId} ${queueName} us-central1`
-    );
-    assert.match(stdout, /Created task/);
-  });
-
   it('quickstart sample should create a task', () => {
     const stdout = exec(
       `node quickstart ${projectId} us-central1 ${queueName}`
@@ -54,22 +42,4 @@ describe('Cloud Task Sample Tests', () => {
     assert.match(stdout, /Created task/);
   });
 
-  it('should create a HTTP task', () => {
-    const stdout = exec(
-      `node createHttpTask ${projectId} my-queue us-central1 ${url}`
-    );
-    assert.match(stdout, /Created task/);
-  });
-
-  it('should create a HTTP task with token', () => {
-    const stdout = exec(
-      `node createHttpTaskWithToken ${projectId} my-queue us-central1 ${url} ${SERVICE_ACCOUNT}`
-    );
-    assert.match(stdout, /Created task/);
-  });
-
-  it('should delete a queue', () => {
-    const stdout = exec(`node deleteQueue ${projectId} ${queueName}`);
-    assert.match(stdout, /Deleted queue/);
-  });
 });
